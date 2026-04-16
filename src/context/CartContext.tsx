@@ -6,7 +6,7 @@ export interface CartProductType {
   id: string
   marca: string
   nombre: string
-  imagenes: Record<string, string>
+  imagen: string
 }
 
 export interface CartItem {
@@ -18,9 +18,9 @@ export interface CartItem {
 
 interface CartContextType {
   cart: CartItem[]
-  addToCart: (product: CartProductType, size: string, price: number, quantity: number) => void
+  addToCart: (product: CartProductType, size: string, price: number | string, quantity: number | string) => void
   removeFromCart: (productId: string, size: string) => void
-  updateQuantity: (productId: string, size: string, quantity: number) => void
+  updateQuantity: (productId: string, size: string, quantity: number | string) => void
   cartTotal: number
   cartItemCount: number
   isHydrated: boolean
@@ -52,15 +52,21 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, [cart, isHydrated])
 
-  const addToCart = (product: CartProductType, size: string, price: number, quantity: number) => {
+  const addToCart = (product: CartProductType, size: string, price: number | string, quantity: number | string) => {
+    const parsedPrice = Number(price)
+    const parsedQuantity = Number(quantity)
+
     setCart(prev => {
-      const existing = prev.findIndex(i => i.product.id === product.id && i.size === size)
-      if (existing >= 0) {
+      const existingIndex = prev.findIndex(i => i.product.id === product.id && i.size === size)
+      if (existingIndex >= 0) {
         const next = [...prev]
-        next[existing].quantity += quantity
+        next[existingIndex] = {
+          ...next[existingIndex],
+          quantity: Number(next[existingIndex].quantity) + parsedQuantity
+        }
         return next
       }
-      return [...prev, { product, size, price, quantity }]
+      return [...prev, { product, size, price: parsedPrice, quantity: parsedQuantity }]
     })
   }
 
@@ -68,18 +74,19 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setCart(prev => prev.filter(i => !(i.product.id === productId && i.size === size)))
   }
 
-  const updateQuantity = (productId: string, size: string, quantity: number) => {
-    if (quantity <= 0) {
+  const updateQuantity = (productId: string, size: string, quantity: number | string) => {
+    const parsedQuantity = Number(quantity)
+    if (parsedQuantity <= 0) {
       removeFromCart(productId, size)
       return
     }
     setCart(prev => prev.map(i => 
-      (i.product.id === productId && i.size === size) ? { ...i, quantity } : i
+      (i.product.id === productId && i.size === size) ? { ...i, quantity: parsedQuantity } : i
     ))
   }
 
-  const cartTotal = cart.reduce((acc, current) => acc + (current.price * current.quantity), 0)
-  const cartItemCount = cart.reduce((acc, current) => acc + current.quantity, 0)
+  const cartTotal = cart.reduce((acc, current) => acc + (Number(current.price) * Number(current.quantity)), 0)
+  const cartItemCount = cart.reduce((acc, current) => acc + Number(current.quantity), 0)
 
   return (
     <CartContext.Provider value={{
