@@ -71,8 +71,8 @@ export function CartDrawer() {
                   <div className="flex gap-4">
                     {/* Img */}
                     <div className="relative w-20 h-20 rounded-md overflow-hidden bg-zinc-900 border border-[#D4AF37]/20 p-2 flex-shrink-0">
-                      {item.product.imagenes && item.product.imagenes[item.size] && (
-                        <Image src={item.product.imagenes[item.size]} fill alt={item.product.nombre} className="object-contain p-1" />
+                      {item.product.imagen && (
+                        <Image src={item.product.imagen} fill alt={item.product.nombre} className="object-contain p-1" />
                       )}
                     </div>
 

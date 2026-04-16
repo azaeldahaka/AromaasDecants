@@ -6,7 +6,7 @@ export interface CartProductType {
   id: string
   marca: string
   nombre: string
-  imagenes: Record<string, string>
+  imagen: string
 }
 
 export interface CartItem {
