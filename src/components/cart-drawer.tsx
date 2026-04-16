@@ -3,6 +3,7 @@
 import { X, Minus, Plus, Trash2, MessageCircle, ShoppingBag } from "lucide-react"
 import { useUI } from "@/context/UIContext"
 import { useCart } from "@/context/CartContext"
+import Image from "next/image"
 
 export function CartDrawer() {
   const { isCartOpen, setIsCartOpen } = useUI()
@@ -68,11 +69,11 @@ export function CartDrawer() {
               {cart.map((item) => (
                 <li key={`${item.product.id}-${item.size}`} className="p-5">
                   <div className="flex gap-4">
-                    {/* Placeholder de Img */}
-                    <div className="relative w-20 h-20 rounded-md overflow-hidden bg-zinc-900 border border-[#D4AF37]/20 flex items-center justify-center p-2 flex-shrink-0">
-                      <p className="text-[9px] text-zinc-500 text-center uppercase break-words leading-tight italic">
-                        {item.product.imagen}
-                      </p>
+                    {/* Img */}
+                    <div className="relative w-20 h-20 rounded-md overflow-hidden bg-zinc-900 border border-[#D4AF37]/20 p-2 flex-shrink-0">
+                      {item.product.imagenes && item.product.imagenes[item.size] && (
+                        <Image src={item.product.imagenes[item.size]} fill alt={item.product.nombre} className="object-contain p-1" />
+                      )}
                     </div>
 
                     {/* Info */}

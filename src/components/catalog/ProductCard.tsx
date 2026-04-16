@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { useCart } from "@/context/CartContext"
 
 interface Precios {
@@ -15,7 +16,7 @@ interface Product {
   marca: string
   nombre: string
   precios: Precios
-  imagen: string
+  imagenes: Record<string, string>
   tipo: string
   genero: string
 }
@@ -38,7 +39,7 @@ export function ProductCard({ product }: { product: Product }) {
     e.preventDefault()
     e.stopPropagation()
     addToCart(
-      { id: product.id, marca: product.marca, nombre: product.nombre, imagen: product.imagen },
+      { id: product.id, marca: product.marca, nombre: product.nombre, imagenes: product.imagenes },
       selectedSize,
       currentPrice,
       1
@@ -47,11 +48,8 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <div className="group flex flex-col bg-black border border-[#D4AF37]/20 rounded-xl overflow-hidden hover:border-[#D4AF37]/60 transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/10">
-      <Link href={`/product/${product.id}`} className="relative aspect-square bg-zinc-950 overflow-hidden flex items-center justify-center">
-        {/* Placeholder para la imagen de 3ml, 5ml, 10ml */}
-        <p className="text-[10px] text-zinc-600 italic px-4 text-center">
-          IMG_SRC: {product.imagen} {selectedSize}.png
-        </p>
+      <Link href={`/product/${product.id}`} className="relative aspect-square bg-zinc-950 overflow-hidden flex items-center justify-center p-4">
+        <Image src={product.imagenes[selectedSize]} fill alt={product.nombre} className="object-contain p-6 hover:scale-105 transition-transform duration-500" />
       </Link>
 
       <div className="p-5 flex flex-col flex-1">

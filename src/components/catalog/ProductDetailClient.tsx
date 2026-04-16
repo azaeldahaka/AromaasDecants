@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { useCart } from "@/context/CartContext"
 import { Shield, Sparkles } from "lucide-react"
+import Image from "next/image"
 
 export function ProductDetailClient({ product }: { product: any }) {
   const { addToCart } = useCart()
@@ -19,7 +20,7 @@ export function ProductDetailClient({ product }: { product: any }) {
 
   const handleAdd = () => {
     addToCart(
-      { id: product.id, marca: product.marca, nombre: product.nombre, imagen: product.imagen },
+      { id: product.id, marca: product.marca, nombre: product.nombre, imagenes: product.imagenes },
       selectedSize,
       currentPrice,
       1
@@ -29,9 +30,10 @@ export function ProductDetailClient({ product }: { product: any }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-6">
       {/* Img side */}
-      <div className="bg-zinc-950 border border-[#D4AF37]/20 rounded-2xl aspect-square flex flex-col items-center justify-center p-8">
-        <p className="text-zinc-500 italic text-sm">Mostrando el modelo:</p>
-        <p className="text-[#D4AF37] font-semibold tracking-wide text-center mt-2">{product.imagen} {selectedSize}.png</p>
+      <div className="relative bg-zinc-950 border border-[#D4AF37]/20 rounded-2xl aspect-square flex flex-col items-center justify-center p-8 overflow-hidden">
+        {product.imagenes && product.imagenes[selectedSize] ? (
+          <Image src={product.imagenes[selectedSize]} fill alt={product.nombre} className="object-contain p-8 hover:scale-110 transition-transform duration-700" />
+        ) : null}
       </div>
 
       {/* Info side */}

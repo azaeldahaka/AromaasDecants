@@ -60,9 +60,8 @@ export function HomeView() {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-700 ${index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
           >
             <Image
               src={slide.image}
@@ -72,7 +71,7 @@ export function HomeView() {
               priority={index === 0}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
-            
+
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
               <span className="text-primary text-sm tracking-[0.3em] uppercase mb-3">
                 AromaasDecants
@@ -115,9 +114,8 @@ export function HomeView() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === currentSlide ? "w-6 bg-primary" : "bg-foreground/30"
-              }`}
+              className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? "w-6 bg-primary" : "bg-foreground/30"
+                }`}
               aria-label={`Ir a slide ${index + 1}`}
             />
           ))}
@@ -131,40 +129,40 @@ export function HomeView() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
           <Link
-                href="/catalog"
-                onClick={() => setCatalogCategory("designer")}
-                className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=450&fit=crop"
-                  alt="Perfumería de Diseñador"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h4 className="text-xl font-serif text-white mb-1">Perfumería de Diseñador</h4>
-                  <p className="text-sm text-zinc-300">Creed, Tom Ford, Chanel y más</p>
-                </div>
-              </Link>
+            href="/catalog"
+            onClick={() => setCatalogCategory("designer")}
+            className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=450&fit=crop"
+              alt="Perfumería de Diseñador"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <h4 className="text-xl font-serif text-white mb-1">Perfumería de Diseñador</h4>
+              <p className="text-sm text-zinc-300">Creed, Tom Ford, Chanel y más</p>
+            </div>
+          </Link>
 
           <Link
-                href="/catalog"
-                onClick={() => setCatalogCategory("arabic")}
-                className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&h=450&fit=crop"
-                  alt="Perfumería Árabe"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h4 className="text-xl font-serif text-white mb-1">Perfumería Árabe</h4>
-                  <p className="text-sm text-zinc-300">Al Haramain, Lattafa, Armaf</p>
-                </div>
-              </Link>
+            href="/catalog"
+            onClick={() => setCatalogCategory("arabic")}
+            className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&h=450&fit=crop"
+              alt="Perfumería Árabe"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <h4 className="text-xl font-serif text-white mb-1">Perfumería Árabe</h4>
+              <p className="text-sm text-zinc-300">Al Haramain, Lattafa, Armaf</p>
+            </div>
+          </Link>
         </div>
       </section>
 
@@ -179,7 +177,7 @@ export function HomeView() {
             Ver todos
           </Link>
         </div>
-        
+
         <div className="flex gap-4 overflow-x-auto pb-4 px-4 scrollbar-hide">
           {bestSellers.map((product) => (
             <Link
@@ -187,8 +185,8 @@ export function HomeView() {
               href={`/product/${product.id}`}
               className="flex-shrink-0 w-40 text-left group"
             >
-              <div className="relative aspect-square rounded-lg overflow-hidden bg-zinc-900 mb-3 border border-[#D4AF37]/20 flex items-center justify-center p-2">
-                <p className="text-[10px] text-zinc-500 text-center break-words italic">IMG: {product.imagen}</p>
+              <div className="relative aspect-square rounded-lg overflow-hidden bg-zinc-900 mb-3 border border-[#D4AF37]/20 flex items-center justify-center p-2 group-hover:border-[#D4AF37]/60 transition-colors">
+                <Image src={(product as any).imagenes["3ml"]} fill alt={product.nombre} className="object-contain p-2" />
               </div>
               <h4 className="text-sm font-medium text-white truncate">
                 {product.nombre}

@@ -4,8 +4,9 @@ import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import { ProductDetailClient } from "@/components/catalog/ProductDetailClient"
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
-  const product = productosData.find(p => p.id === params.id)
+export default async function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
+  const product = productosData.find(p => p.id === resolvedParams.id)
 
   if (!product) {
     notFound() // Genera la página de error 404 automática de Next

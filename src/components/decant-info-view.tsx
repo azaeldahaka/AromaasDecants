@@ -5,86 +5,80 @@ import Image from "next/image"
 import Link from "next/link"
 
 export function DecantInfoView() {
-
   return (
-    <div className="pt-16 min-h-screen">
+    <div className="pt-24 pb-12 min-h-screen bg-black overflow-x-hidden">
       {/* Back button */}
-      <div className="px-4 py-3 border-b border-border">
+      <div className="px-6 py-4 border-b border-[#D4AF37]/20 max-w-7xl mx-auto">
         <Link
           href="/"
-          className="flex items-center gap-2 text-[#D4AF37]/80 hover:text-[#D4AF37] transition-colors"
+          className="inline-flex items-center gap-2 text-zinc-400 hover:text-[#D4AF37] transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
-          <span className="text-sm">Volver al inicio</span>
+          <span className="text-sm font-medium">Volver al inicio</span>
         </Link>
       </div>
 
       {/* Hero */}
-      <div className="relative h-48 bg-secondary">
-        <Image
-          src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?w=800&h=400&fit=crop"
-          alt="Decant de perfume"
-          fill
-          className="object-cover opacity-60"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <h1 className="text-3xl font-serif text-foreground">
+      <div className="relative h-64 bg-zinc-900 border-b border-[#D4AF37]/30">
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
+        <div className="absolute bottom-0 left-0 right-0 p-8 max-w-4xl mx-auto z-20">
+          <h1 className="text-4xl md:text-5xl font-serif text-[#D4AF37] mb-2 tracking-wide">
             ¿Qué es un Decant?
           </h1>
+          <p className="text-zinc-300">Descubre la manera inteligente de coleccionar fragancias.</p>
         </div>
       </div>
 
       {/* Content */}
-      <article className="p-4 space-y-8 max-w-2xl mx-auto">
-        {/* Intro */}
+      <article className="p-6 space-y-12 max-w-4xl mx-auto mt-8">
         <section>
-          <p className="text-muted-foreground leading-relaxed">
-            Un <strong className="text-foreground">decant</strong> es una muestra de perfume 
+          <p className="text-zinc-300 leading-relaxed text-lg">
+            Un <strong className="text-white">decant</strong> es una muestra de perfume 
             original extraída directamente de la botella del fabricante y transferida a un 
-            atomizador más pequeño. Es la forma perfecta de probar fragancias de lujo sin 
-            comprometerte con el precio completo de un frasco.
+            atomizador más pequeño (3ml, 5ml o 10ml). Es la forma más exclusiva y sensata de probar 
+            fragancias de lujo de diseñador y nicho sin comprometerte con el precio de un frasco completo.
           </p>
         </section>
 
         {/* Benefits */}
         <section>
-          <h2 className="text-xl font-serif text-foreground mb-4">
-            Beneficios de los Decants
+          <h2 className="text-2xl font-serif text-white mb-6 flex items-center gap-3">
+            <span className="w-8 h-px bg-[#D4AF37]"></span>
+            Beneficios
           </h2>
-          <div className="grid gap-4">
-            <div className="flex gap-4 p-4 bg-card rounded-lg border border-border">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Droplets className="w-5 h-5 text-primary" />
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="flex flex-col gap-4 p-6 bg-zinc-950 rounded-xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-colors group">
+              <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <Droplets className="w-6 h-6 text-[#D4AF37]" />
               </div>
               <div>
-                <h3 className="font-medium text-foreground mb-1">Prueba Antes de Invertir</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Conoce cómo se desarrolla una fragancia en tu piel antes de comprar la botella completa.
+                <h3 className="font-semibold text-white mb-2 text-lg">Prueba Antes de Invertir</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Conoce cómo se desarrolla la fragancia en tu piel durante el día.
                 </p>
               </div>
             </div>
 
-            <div className="flex gap-4 p-4 bg-card rounded-lg border border-border">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Package className="w-5 h-5 text-primary" />
+            <div className="flex flex-col gap-4 p-6 bg-zinc-950 rounded-xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-colors group">
+              <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <Package className="w-6 h-6 text-[#D4AF37]" />
               </div>
               <div>
-                <h3 className="font-medium text-foreground mb-1">Variedad en tu Colección</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Arma una colección diversa de fragancias premium sin gastar una fortuna.
+                <h3 className="font-semibold text-white mb-2 text-lg">Gran Variedad</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Arma una colección diversa y rotativa de fragancias premium.
                 </p>
               </div>
             </div>
 
-            <div className="flex gap-4 p-4 bg-card rounded-lg border border-border">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Shield className="w-5 h-5 text-primary" />
+            <div className="flex flex-col gap-4 p-6 bg-zinc-950 rounded-xl border border-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-colors group">
+              <div className="w-12 h-12 rounded-full bg-[#D4AF37]/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <Shield className="w-6 h-6 text-[#D4AF37]" />
               </div>
               <div>
-                <h3 className="font-medium text-foreground mb-1">100% Original</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Todas nuestras fragancias son auténticas, extraídas de botellas originales selladas.
+                <h3 className="font-semibold text-white mb-2 text-lg">100% Original</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Extracciones clínicas de botellas totalmente originales y verificadas.
                 </p>
               </div>
             </div>
@@ -93,85 +87,41 @@ export function DecantInfoView() {
 
         {/* Process */}
         <section>
-          <h2 className="text-xl font-serif text-foreground mb-4">
-            Nuestro Proceso de Extracción
+          <h2 className="text-2xl font-serif text-white mb-6 flex items-center gap-3">
+            <span className="w-8 h-px bg-[#D4AF37]"></span>
+            El Proceso de Extracción
           </h2>
-          <div className="relative aspect-video rounded-lg overflow-hidden mb-4 bg-secondary">
-            <Image
-              src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&h=450&fit=crop"
-              alt="Proceso de extracción de decant"
-              fill
-              className="object-cover"
-            />
+          <div className="relative aspect-video rounded-xl overflow-hidden mb-6 bg-zinc-900 border border-[#D4AF37]/20 flex items-center justify-center">
+            <Beaker className="w-16 h-16 text-zinc-700" />
           </div>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <div className="space-y-4 text-zinc-300 leading-relaxed">
             <p>
-              En <strong className="text-foreground">AromaasDecants</strong>, nos tomamos muy 
-              en serio la calidad de nuestros productos. Cada decant es preparado siguiendo 
-              un riguroso protocolo de extracción estéril:
+              En <strong className="text-[#D4AF37]">AromaasDecants</strong> mantenemos un protocolo de extracción de grado clínico:
             </p>
-            <ol className="list-decimal list-inside space-y-2 pl-2">
-              <li>Utilizamos jeringas y atomizadores nuevos para cada extracción</li>
-              <li>El proceso se realiza en un ambiente limpio y controlado</li>
-              <li>Las botellas originales son verificadas antes de cada extracción</li>
-              <li>Los atomizadores son etiquetados con el nombre de la fragancia y el volumen</li>
+            <ol className="list-decimal list-inside space-y-3 pl-2 text-zinc-400">
+              <li>Utilizamos jeringas extractoras estériles para no contaminar la fragancia.</li>
+              <li>Atomizadores de vidrio seleccionados para conservar el líquido inerte.</li>
+              <li>Sellado con teflón en la rosca para prevenir evaporaciones.</li>
+              <li>Etiquetado impecable y packaging seguro.</li>
             </ol>
           </div>
         </section>
 
-        {/* Sizes */}
-        <section>
-          <h2 className="text-xl font-serif text-foreground mb-4">
-            Tamaños Disponibles
-          </h2>
-          <div className="grid grid-cols-2 gap-3">
-            <div className="p-4 bg-card rounded-lg border border-border text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                <Beaker className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-medium text-foreground">3ml</h3>
-              <p className="text-xs text-muted-foreground">~30 aplicaciones</p>
-            </div>
-            <div className="p-4 bg-card rounded-lg border border-border text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                <Beaker className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-medium text-foreground">5ml</h3>
-              <p className="text-xs text-muted-foreground">~50 aplicaciones</p>
-            </div>
-            <div className="p-4 bg-card rounded-lg border border-border text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                <Beaker className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-medium text-foreground">10ml</h3>
-              <p className="text-xs text-muted-foreground">~100 aplicaciones</p>
-            </div>
-            <div className="p-4 bg-card rounded-lg border border-border text-center">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                <Package className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="font-medium text-foreground">Botella</h3>
-              <p className="text-xs text-muted-foreground">Original sellada</p>
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
-        <section className="pt-4">
-        <section className="pt-4">
+        <section className="pt-8 pb-12">
           <Link
             href="/catalog"
-            className="w-full flex items-center justify-center py-4 px-6 bg-[#D4AF37] text-black font-semibold rounded-lg hover:bg-[#D4AF37]/90 transition-colors"
+            className="w-full sm:w-auto inline-flex items-center justify-center py-4 px-12 bg-[#D4AF37] text-black font-bold uppercase tracking-wider rounded-xl hover:bg-[#D4AF37]/90 transition-all hover:scale-105 active:scale-95"
           >
-            Explorar Catálogo
+            Explorar Catálogo de Fragancias
           </Link>
         </section>
       </article>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-border text-center mt-8">
-        <p className="text-xs text-muted-foreground">
-          © 2024 AromaasDecants. Todos los derechos reservados.
+      <footer className="py-8 px-6 border-t border-[#D4AF37]/20 text-center bg-zinc-950 mt-12">
+        <p className="text-sm text-zinc-500 font-serif">
+          © 2024 AromaasDecants. La revolución de la alta perfumería.
         </p>
       </footer>
     </div>
