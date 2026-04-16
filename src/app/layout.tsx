@@ -18,8 +18,20 @@ export const metadata: Metadata = {
   description: 'Descubre fragancias de diseñador y perfumería árabe en presentaciones decant. 100% originales, extracción estéril.',
   generator: 'v0.app',
   icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
+    icon: [
+      {
+        url: '/icon-dark.png',
+        media: '(prefers-color-scheme: light)',
+        type: 'image/png',
+      },
+      {
+        url: '/icon-light.png',
+        media: '(prefers-color-scheme: dark)',
+        type: 'image/png',
+      },
+    ],
+    // Apple Touch Icon (usamos la versión light por defecto para luxury)
+    apple: '/icon-light.png', 
   },
 }
 
