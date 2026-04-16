@@ -2,22 +2,21 @@
 
 import { ArrowLeft, Droplets, Shield, Beaker, Package } from "lucide-react"
 import Image from "next/image"
-import { useStore } from "@/lib/store-context"
+import Link from "next/link"
 
 export function DecantInfoView() {
-  const { setCurrentView } = useStore()
 
   return (
     <div className="pt-16 min-h-screen">
       {/* Back button */}
       <div className="px-4 py-3 border-b border-border">
-        <button
-          onClick={() => setCurrentView("home")}
-          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-[#D4AF37]/80 hover:text-[#D4AF37] transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
           <span className="text-sm">Volver al inicio</span>
-        </button>
+        </Link>
       </div>
 
       {/* Hero */}
@@ -159,12 +158,13 @@ export function DecantInfoView() {
 
         {/* CTA */}
         <section className="pt-4">
-          <button
-            onClick={() => setCurrentView("catalog")}
-            className="w-full py-4 px-6 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors"
+        <section className="pt-4">
+          <Link
+            href="/catalog"
+            className="w-full flex items-center justify-center py-4 px-6 bg-[#D4AF37] text-black font-semibold rounded-lg hover:bg-[#D4AF37]/90 transition-colors"
           >
             Explorar Catálogo
-          </button>
+          </Link>
         </section>
       </article>
 

@@ -2,8 +2,10 @@
 
 import { ChevronLeft, ChevronRight, Shield, Truck, Sparkles } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useState, useEffect, useCallback } from "react"
-import { useStore, products } from "@/lib/store-context"
+import { useUI } from "@/context/UIContext"
+import productsData from "@/data/productos.json"
 
 const heroSlides = [
   {
@@ -24,7 +26,7 @@ const heroSlides = [
 ]
 
 export function HomeView() {
-  const { setCurrentView, setSelectedProduct, setCurrentCategory } = useStore()
+  const { setCatalogCategory } = useUI()
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const nextSlide = useCallback(() => {
@@ -40,16 +42,6 @@ export function HomeView() {
     return () => clearInterval(timer)
   }, [nextSlide])
 
-  const handleProductClick = (product: typeof products[0]) => {
-    setSelectedProduct(product)
-    setCurrentView("product")
-  }
-
-  const handleCategoryClick = (category: string) => {
-    setCurrentCategory(category)
-    setCurrentView("catalog")
-  }
-
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
@@ -58,7 +50,8 @@ export function HomeView() {
     }).format(price)
   }
 
-  const bestSellers = products.slice(0, 5)
+  const bestSellers = productsData.slice(0, 5)
+
 
   return (
     <div className="pt-16">
@@ -90,12 +83,12 @@ export function HomeView() {
               <p className="text-lg text-muted-foreground mb-8">
                 {slide.subtitle}
               </p>
-              <button
-                onClick={() => setCurrentView("catalog")}
-                className="px-8 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
+              <Link
+                href="/catalog"
+                className="px-8 py-3 bg-[#D4AF37] text-black font-semibold rounded-md hover:bg-[#D4AF37]/90 transition-colors"
               >
                 Ver Catálogo
-              </button>
+              </Link>
             </div>
           </div>
         ))}
@@ -137,39 +130,41 @@ export function HomeView() {
           Explora Nuestras Colecciones
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-          <button
-            onClick={() => handleCategoryClick("designer")}
-            className="group relative aspect-[4/3] rounded-lg overflow-hidden"
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=450&fit=crop"
-              alt="Perfumería de Diseñador"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <h4 className="text-xl font-serif text-foreground mb-1">Perfumería de Diseñador</h4>
-              <p className="text-sm text-muted-foreground">Creed, Tom Ford, Chanel y más</p>
-            </div>
-          </button>
+          <Link
+                href="/catalog"
+                onClick={() => setCatalogCategory("designer")}
+                className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
+              >
+                <Image
+                  src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=450&fit=crop"
+                  alt="Perfumería de Diseñador"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h4 className="text-xl font-serif text-white mb-1">Perfumería de Diseñador</h4>
+                  <p className="text-sm text-zinc-300">Creed, Tom Ford, Chanel y más</p>
+                </div>
+              </Link>
 
-          <button
-            onClick={() => handleCategoryClick("arabic")}
-            className="group relative aspect-[4/3] rounded-lg overflow-hidden"
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&h=450&fit=crop"
-              alt="Perfumería Árabe"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <h4 className="text-xl font-serif text-foreground mb-1">Perfumería Árabe</h4>
-              <p className="text-sm text-muted-foreground">Al Haramain, Lattafa, Armaf</p>
-            </div>
-          </button>
+          <Link
+                href="/catalog"
+                onClick={() => setCatalogCategory("arabic")}
+                className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
+              >
+                <Image
+                  src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&h=450&fit=crop"
+                  alt="Perfumería Árabe"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h4 className="text-xl font-serif text-white mb-1">Perfumería Árabe</h4>
+                  <p className="text-sm text-zinc-300">Al Haramain, Lattafa, Armaf</p>
+                </div>
+              </Link>
         </div>
       </section>
 
@@ -177,37 +172,32 @@ export function HomeView() {
       <section className="py-12 border-t border-border">
         <div className="px-4 mb-6 flex items-center justify-between">
           <h3 className="font-serif text-2xl text-foreground">Más Vendidos</h3>
-          <button
-            onClick={() => setCurrentView("catalog")}
-            className="text-sm text-primary hover:underline"
+          <Link
+            href="/catalog"
+            className="text-sm text-[#D4AF37] hover:underline"
           >
             Ver todos
-          </button>
+          </Link>
         </div>
         
         <div className="flex gap-4 overflow-x-auto pb-4 px-4 scrollbar-hide">
           {bestSellers.map((product) => (
-            <button
+            <Link
               key={product.id}
-              onClick={() => handleProductClick(product)}
+              href={`/product/${product.id}`}
               className="flex-shrink-0 w-40 text-left group"
             >
-              <div className="relative aspect-square rounded-lg overflow-hidden bg-secondary mb-3">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+              <div className="relative aspect-square rounded-lg overflow-hidden bg-zinc-900 mb-3 border border-[#D4AF37]/20 flex items-center justify-center p-2">
+                <p className="text-[10px] text-zinc-500 text-center break-words italic">IMG: {product.imagen}</p>
               </div>
-              <h4 className="text-sm font-medium text-foreground truncate">
-                {product.name}
+              <h4 className="text-sm font-medium text-white truncate">
+                {product.nombre}
               </h4>
-              <p className="text-xs text-muted-foreground mb-1">{product.brand}</p>
-              <p className="text-sm text-primary">
-                Desde {formatPrice(product.variants[0].price)}
+              <p className="text-xs text-zinc-400 mb-1">{product.marca}</p>
+              <p className="text-sm text-[#D4AF37]">
+                Desde {formatPrice(product.precios["3ml"])}
               </p>
-            </button>
+            </Link>
           ))}
         </div>
       </section>

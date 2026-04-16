@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "marca": "Givenchy",
+    "nombre": "eau de parfum",
+    "precios": {
+      "3ml": 5000,
+      "5ml": 8500,
+      "10ml": 16000
+    },
+    "imagen": "Givenchy eau de parfum",
+    "tipo": "Diseñador",
+    "genero": "Mujer"
+  },
+  {
+    "id": "2",
+    "marca": "Tom Ford",
+    "nombre": "BLACK ORCHID EDP",
+    "precios": {
+      "3ml": 8000,
+      "5ml": 13000,
+      "10ml": 24000
+    },
+    "imagen": "Tom ford BLACK ORCHID EDP",
+    "tipo": "Diseñador",
+    "genero": "Unisex"
+  },
+  {
+    "id": "3",
+    "marca": "Valentino",
+    "nombre": "born in roma edt",
+    "precios": {
+      "3ml": 5500,
+      "5ml": 9000,
+      "10ml": 17000
+    },
+    "imagen": "Valentino born in roma edt",
+    "tipo": "Diseñador",
+    "genero": "Unisex"
+  }
+]
