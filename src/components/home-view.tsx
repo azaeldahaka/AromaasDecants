@@ -186,7 +186,7 @@ export function HomeView() {
               className="flex-shrink-0 w-40 text-left group"
             >
               <div className="relative aspect-square rounded-lg overflow-hidden bg-zinc-900 mb-3 border border-[#D4AF37]/20 flex items-center justify-center p-2 group-hover:border-[#D4AF37]/60 transition-colors">
-                <Image src={(product as any).imagenes["3ml"]} fill alt={product.nombre} className="object-contain p-2" />
+                <Image src={(product as any).imagen} fill alt={product.nombre} className="object-contain p-2" />
               </div>
               <h4 className="text-sm font-medium text-white truncate">
                 {product.nombre}
