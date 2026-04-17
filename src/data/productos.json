@@ -4,7 +4,11 @@
     "marca": "Givenchy",
     "nombre": "Eau de Parfum",
     "precios": { "3ml": 4500, "5ml": 7500, "10ml": 14000 },
-    "imagen": "/Fotos Perfumes/Givenchy eau de parfum 10 ml.png",
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Givenchy eau de parfum  3ml.png",
+      "5ml": "/Fotos Perfumes/Givenchy eau de parfum  5ml.png",
+      "10ml": "/Fotos Perfumes/Givenchy eau de parfum 10 ml.png"
+    },
     "tipo": "Diseñador",
     "genero": "mujer"
   },
@@ -13,7 +17,11 @@
     "marca": "Givenchy",
     "nombre": "Eau de Parfum Boisee",
     "precios": { "3ml": 4800, "5ml": 7800, "10ml": 14500 },
-    "imagen": "/Fotos Perfumes/Givenchy eau de parfum boisse 10 ML.png",
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 3 ML.png",
+      "5ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 5 ML.png",
+      "10ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 10 ML.png"
+    },
     "tipo": "Diseñador",
     "genero": "hombre"
   },
@@ -22,7 +30,11 @@
     "marca": "Paco Rabanne",
     "nombre": "Invictus Elixir",
     "precios": { "3ml": 4200, "5ml": 6800, "10ml": 12500 },
-    "imagen": "/Fotos Perfumes/Invictus elixir 10ML.png",
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Invictus elixir 3 ML.png",
+      "5ml": "/Fotos Perfumes/Invictus elixir 5 ML.png",
+      "10ml": "/Fotos Perfumes/Invictus elixir 10ML.png"
+    },
     "tipo": "Diseñador",
     "genero": "hombre"
   },
@@ -31,7 +43,11 @@
     "marca": "Jean Paul Gaultier",
     "nombre": "Le Male Elixir",
     "precios": { "3ml": 5000, "5ml": 8200, "10ml": 15000 },
-    "imagen": "/Fotos Perfumes/Jean paul guiltier le male elixir 10 ML.png",
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Jean paul guiltier le male elixir 3 ML.png",
+      "5ml": "/Fotos Perfumes/Jean paul guiltier le male elixir 5 ML.png",
+      "10ml": "/Fotos Perfumes/Jean paul guiltier le male elixir 10 ML.png"
+    },
     "tipo": "Diseñador",
     "genero": "hombre"
   },
@@ -40,7 +56,11 @@
     "marca": "Tom Ford",
     "nombre": "Black Orchid EDP",
     "precios": { "3ml": 8500, "5ml": 13500, "10ml": 25000 },
-    "imagen": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 10ml.png",
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 3ml.png",
+      "5ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 5ml.png",
+      "10ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 10ml.png"
+    },
     "tipo": "Nicho",
     "genero": "unisex"
   },
@@ -49,7 +69,11 @@
     "marca": "Valentino",
     "nombre": "Born in Roma EDT",
     "precios": { "3ml": 4500, "5ml": 7500, "10ml": 13800 },
-    "imagen": "/Fotos Perfumes/Valentino born in roma edt  10 ml.png",
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Valentino born in roma edt  3 ml.png",
+      "5ml": "/Fotos Perfumes/Valentino born in roma edt  5 ml.png",
+      "10ml": "/Fotos Perfumes/Valentino born in roma edt  10 ml.png"
+    },
     "tipo": "Diseñador",
     "genero": "hombre"
   }

@@ -107,11 +107,47 @@ export function DecantInfoView() {
           </div>
         </section>
 
+        {/* Pedidos Especiales */}
+        <section>
+          <h2 className="text-2xl font-serif text-white mb-6 flex items-center gap-3">
+            <span className="w-8 h-px bg-[#D4AF37]"></span>
+            Pedidos Especiales / Perfumes Sellados
+          </h2>
+          <div className="bg-zinc-950 p-6 sm:p-8 rounded-xl border border-[#D4AF37]/20 relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-4 opacity-5">
+              <Package className="w-32 h-32" />
+            </div>
+            
+            <p className="text-zinc-300 leading-relaxed mb-6 font-medium relative z-10 w-3/4 sm:w-full">
+              ¿No encuentras la fragancia que buscas en formato completo o botella sellada? 
+              <br />Realizamos <strong className="text-[#D4AF37]">pedidos por encargo</strong> con una red de proveedores directos.
+            </p>
+
+            <div className="space-y-4 relative z-10">
+              <h4 className="text-white font-semibold">¿Cómo funciona?</h4>
+              <ul className="list-disc list-inside text-sm text-zinc-400 space-y-2">
+                <li>Cotizamos cualquier perfume de Diseñador, Árabe o Nicho.</li>
+                <li>Trabajamos fragancias selladas 100% de fábrica.</li>
+                <li>Los tiempos de entrega varían según la disponibilidad e importación.</li>
+              </ul>
+            </div>
+
+            <div className="mt-8 relative z-10">
+              <Link
+                href="/special-requests"
+                className="inline-flex items-center gap-2 bg-[#D4AF37] text-black font-bold py-3 px-6 rounded-lg hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(212,175,55,0.2)]"
+              >
+                Solicitar Cotización Directa
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="pt-8 pb-12">
           <Link
             href="/catalog"
-            className="w-full sm:w-auto inline-flex items-center justify-center py-4 px-12 bg-[#D4AF37] text-black font-bold uppercase tracking-wider rounded-xl hover:bg-[#D4AF37]/90 transition-all hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center py-4 px-12 bg-white text-black font-bold uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-all hover:scale-105 active:scale-95"
           >
             Explorar Catálogo de Fragancias
           </Link>

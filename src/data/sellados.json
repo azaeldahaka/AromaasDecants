@@ -1,0 +1,42 @@
+[
+  {
+    "id": "creed-aventus-sellado",
+    "marca": "Creed",
+    "nombre": "Aventus EDP",
+    "precio": 350000,
+    "imagen": "/perfume-lujo.jpeg",
+    "tipo": "Nicho",
+    "genero": "Hombre",
+    "descripcion": "Una obra maestra de la perfumería nicho. Envase sellado original de fábrica (100ml)."
+  },
+  {
+    "id": "lattafa-asad-sellado",
+    "marca": "Lattafa",
+    "nombre": "Asad EDP",
+    "precio": 65000,
+    "imagen": "/perfume-arabe.jpeg",
+    "tipo": "Árabe",
+    "genero": "Hombre",
+    "descripcion": "Potencia y carácter oriental. Botella original sellada (100ml)."
+  },
+  {
+    "id": "baccarat-rouge-sellado",
+    "marca": "Maison Francis Kurkdjian",
+    "nombre": "Baccarat Rouge 540",
+    "precio": 480000,
+    "imagen": "/perfume-lujo.jpeg",
+    "tipo": "Nicho",
+    "genero": "Unisex",
+    "descripcion": "El lujo absoluto en su presentación original, celofán de fábrica (70ml)."
+  },
+  {
+    "id": "valentino-roma-sellado",
+    "marca": "Valentino",
+    "nombre": "Born in Roma Intense",
+    "precio": 190000,
+    "imagen": "/perfume-diseñador.jpeg",
+    "tipo": "Diseñador",
+    "genero": "Mujer",
+    "descripcion": "Dulce, elegante y seductor. Presentación sellada 100ml."
+  }
+]

@@ -16,7 +16,7 @@ interface Product {
   marca: string
   nombre: string
   precios: Precios
-  imagen: string
+  imagenes: Record<string, string>
   tipo: string
   genero: string
 }
@@ -39,7 +39,7 @@ export function ProductCard({ product }: { product: Product }) {
     e.preventDefault()
     e.stopPropagation()
     addToCart(
-      { id: product.id, marca: product.marca, nombre: product.nombre, imagen: product.imagen },
+      { id: product.id, marca: product.marca, nombre: product.nombre, imagenes: product.imagenes },
       selectedSize,
       currentPrice,
       1
@@ -49,7 +49,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group flex flex-col bg-black border border-[#D4AF37]/20 rounded-xl overflow-hidden hover:border-[#D4AF37]/60 transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/10">
       <Link href={`/product/${product.id}`} className="relative aspect-square bg-zinc-950 overflow-hidden flex items-center justify-center p-4">
-        <Image src={product.imagen} fill alt={product.nombre} className="object-contain p-6 hover:scale-105 transition-transform duration-500" />
+        <Image src={product.imagenes[selectedSize]} fill alt={product.nombre} className="object-contain p-6 hover:scale-105 transition-transform duration-500" />
       </Link>
 
       <div className="p-5 flex flex-col flex-1">
