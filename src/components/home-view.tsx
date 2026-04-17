@@ -123,18 +123,20 @@ export function HomeView() {
       </section>
 
       {/* Category Blocks */}
-      <section className="px-4 py-12">
-        <h3 className="text-center font-serif text-2xl text-foreground mb-8">
-          Explora Nuestras Colecciones
+      <section className="px-6 py-16 bg-black">
+        <h3 className="text-2xl font-serif text-white text-center mb-10 flex items-center justify-center gap-4">
+          <span className="w-12 h-px bg-[#D4AF37]/50" />
+          Categorías Destacadas
+          <span className="w-12 h-px bg-[#D4AF37]/50" />
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
           <Link
             href="/catalog"
             onClick={() => setCatalogCategory("designer")}
             className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
           >
             <Image
-              src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=450&fit=crop"
+              src="/perfume-diseñador.jpeg"
               alt="Perfumería de Diseñador"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -142,7 +144,7 @@ export function HomeView() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <h4 className="text-xl font-serif text-white mb-1">Perfumería de Diseñador</h4>
-              <p className="text-sm text-zinc-300">Creed, Tom Ford, Chanel y más</p>
+              <p className="text-sm text-zinc-300">Jean Paul Gaultier, Valentino, Rabanne</p>
             </div>
           </Link>
 
@@ -152,7 +154,7 @@ export function HomeView() {
             className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
           >
             <Image
-              src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&h=450&fit=crop"
+              src="/perfume-arabe.jpeg"
               alt="Perfumería Árabe"
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -160,7 +162,25 @@ export function HomeView() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <h4 className="text-xl font-serif text-white mb-1">Perfumería Árabe</h4>
-              <p className="text-sm text-zinc-300">Al Haramain, Lattafa, Armaf</p>
+              <p className="text-sm text-zinc-300">Lattafa, Armaf, Rasasi</p>
+            </div>
+          </Link>
+
+          <Link
+            href="/catalog"
+            onClick={() => setCatalogCategory("todos")}
+            className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
+          >
+            <Image
+              src="/perfume-lujo.jpeg"
+              alt="Perfumería Exclusiva"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <h4 className="text-xl font-serif text-white mb-1">Exclusivos y Nicho</h4>
+              <p className="text-sm text-zinc-300">Tom Ford y selecciones especiales</p>
             </div>
           </Link>
         </div>
@@ -186,7 +206,7 @@ export function HomeView() {
               className="flex-shrink-0 w-40 text-left group"
             >
               <div className="relative aspect-square rounded-lg overflow-hidden bg-zinc-900 mb-3 border border-[#D4AF37]/20 flex items-center justify-center p-2 group-hover:border-[#D4AF37]/60 transition-colors">
-                <Image src={(product as any).imagen} fill alt={product.nombre} className="object-contain p-2" />
+                <Image src={(product as any).imagenes["3ml"]} fill alt={product.nombre} className="object-contain p-2" />
               </div>
               <h4 className="text-sm font-medium text-white truncate">
                 {product.nombre}

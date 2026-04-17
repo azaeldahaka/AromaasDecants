@@ -3,7 +3,6 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import { AddToCartActions } from "@/components/catalog/AddToCartActions"
-import Image from "next/image"
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params
@@ -22,30 +21,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
         </Link>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-6">
-        {/* Lado de Imagen (Server Rendered) */}
-        <div className="relative bg-zinc-950 border border-[#D4AF37]/20 rounded-2xl aspect-square flex flex-col items-center justify-center p-8 overflow-hidden group">
-          <Image 
-            src={product.imagen} 
-            fill 
-            alt={product.nombre} 
-            className="object-contain p-8 group-hover:scale-105 transition-transform duration-700" 
-            priority
-          />
-        </div>
-
-        {/* Lado de Información y Componente Interactivo */}
-        <div className="flex flex-col py-4">
-          <p className="text-[#D4AF37] tracking-widest uppercase text-sm mb-2 font-semibold">
-           {product.marca} | {product.genero}
-          </p>
-          <h1 className="text-4xl lg:text-5xl font-serif text-white mb-6 leading-tight max-w-xl">
-           {product.nombre}
-          </h1>
-          
-          <AddToCartActions product={product} />
-        </div>
-      </div>
+      <AddToCartActions product={product} />
     </div>
   )
 }

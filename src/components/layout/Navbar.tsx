@@ -4,6 +4,7 @@ import { Menu, ShoppingBag, Search } from "lucide-react"
 import { useUI } from "@/context/UIContext"
 import { useCart } from "@/context/CartContext"
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 
@@ -22,15 +23,16 @@ export function Navbar() {
           className="p-2 -ml-2 text-white hover:text-[#D4AF37] flex-shrink-0 transition-colors"
           aria-label="Abrir menú"
         >
-          <Menu className="w-6 h-6" />
+          <Menu className="w-5 h-5" />
         </button>
 
         {/* Logo Central */}
         <Link
           href="/"
-          className="flex-shrink-0 flex items-center justify-center transition-opacity hover:opacity-80 mx-auto"
+          className="flex-shrink-0 flex items-center justify-center transition-opacity hover:opacity-80 mx-auto gap-2"
         >
-          <h1 className="text-base sm:text-xl md:text-2xl font-serif tracking-[0.15em] sm:tracking-[0.2em] text-white">
+          <Image src="/icon-light.png" alt="AromaasLogo" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
+          <h1 className="text-base sm:text-xl md:text-2xl font-serif tracking-[0.10em] sm:tracking-[0.2em] text-white">
             AROMAAS<span className="text-[#D4AF37]">DECANTS</span>
           </h1>
         </Link>
@@ -67,9 +69,9 @@ export function Navbar() {
             className="relative p-2 -mr-2 text-white flex-shrink-0 hover:text-[#D4AF37] transition-colors"
             aria-label="Ver carrito"
           >
-            <ShoppingBag className="w-6 h-6" />
+            <ShoppingBag className="w-5 h-5" />
             {isHydrated && cartItemCount > 0 && (
-              <span className="absolute top-0 right-0 flex items-center justify-center w-5 h-5 text-[10px] font-bold text-black bg-[#D4AF37] rounded-full">
+              <span className="absolute top-0 right-0 flex items-center justify-center w-4 h-4 text-[9px] font-bold text-black bg-[#D4AF37] rounded-full">
                 {cartItemCount}
               </span>
             )}

@@ -54,7 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable} bg-background`}>
-      <body className="font-sans antialiased min-h-screen bg-black text-white pt-20">
+      <body className="font-sans antialiased min-h-screen bg-black text-white">
         <UIProvider>
           <CartProvider>
             <Navbar />

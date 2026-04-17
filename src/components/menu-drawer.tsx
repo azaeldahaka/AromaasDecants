@@ -8,6 +8,7 @@ import Link from "next/link"
 export function MenuDrawer() {
   const { isMenuOpen, setIsMenuOpen, setCatalogCategory } = useUI()
   const [catalogExpanded, setCatalogExpanded] = useState(false)
+  const [selladosExpanded, setSelladosExpanded] = useState(false)
 
   const handleCategoryClick = (category: string) => {
     setCatalogCategory(category)
@@ -79,6 +80,37 @@ export function MenuDrawer() {
               )}
             </li>
 
+            {/* Sellados */}
+            <li>
+              <button
+                onClick={() => setSelladosExpanded(!selladosExpanded)}
+                className="flex items-center justify-between w-full px-4 py-3 text-white hover:bg-white/5 transition-colors"
+              >
+                <span className="text-base">Perfumes Sellados</span>
+                {selladosExpanded ? (
+                  <ChevronDown className="w-5 h-5 text-[#D4AF37]" />
+                ) : (
+                  <ChevronRight className="w-5 h-5 text-[#D4AF37]" />
+                )}
+              </button>
+              
+              {selladosExpanded && (
+                <ul className="bg-black/50 py-2">
+                  {["Hombre", "Mujer", "Unisex"].map(cat => (
+                    <li key={cat}>
+                      <Link
+                        href={`/sellados?category=${cat}`}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="block w-full px-8 py-2.5 text-sm text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
+                      >
+                        {cat}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+
             {/* Links Estáticos */}
             <li>
               <Link
@@ -86,7 +118,7 @@ export function MenuDrawer() {
                 onClick={() => setIsMenuOpen(false)}
                 className="block w-full px-4 py-3 text-white hover:bg-white/5 transition-colors"
               >
-                ¿Qué es un Decant?
+                Información
               </Link>
             </li>
             <li>
