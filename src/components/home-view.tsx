@@ -9,17 +9,17 @@ import productsData from "@/data/productos.json"
 
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1200&h=800&fit=crop",
+    image: "/perfume-lujo.jpeg",
     title: "Fragancias de Lujo",
     subtitle: "Descubre el arte de la perfumería"
   },
   {
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1200&h=800&fit=crop",
+    image: "/perfume-diseñador.jpeg",
     title: "Perfumería de Diseñador",
     subtitle: "Las mejores marcas al mejor precio"
   },
   {
-    image: "https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=1200&h=800&fit=crop",
+    image: "/perfume-arabe.jpeg",
     title: "Perfumería Árabe",
     subtitle: "Aromas exóticos y duraderos"
   }
