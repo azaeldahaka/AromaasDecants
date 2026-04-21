@@ -31,7 +31,7 @@ export function Navbar() {
           href="/"
           className="flex-shrink-0 flex items-center justify-center transition-opacity hover:opacity-80 mx-auto gap-2"
         >
-          <Image src="/icon-light.png" alt="AromaasLogo" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
+          <Image src="/icon-light.png" alt="AromaasLogo" width={24} height={24} className="w-5 h-5 sm:w-5 sm:h-5" />
           <h1 className="text-base sm:text-xl md:text-2xl font-serif tracking-[0.10em] sm:tracking-[0.2em] text-white">
             AROMAAS<span className="text-[#D4AF37]">DECANTS</span>
           </h1>
