@@ -131,9 +131,8 @@ export function HomeView() {
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
           <Link
-            href="/catalog"
-            onClick={() => setCatalogCategory("designer")}
-            className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
+            href="/sellados?category=diseñador"
+            className="group relative aspect-[4/3] rounded-lg overflow-hidden block border border-zinc-800/50 hover:border-[#D4AF37]/50 transition-colors"
           >
             <Image
               src="/perfume-diseñador.jpeg"
@@ -149,9 +148,8 @@ export function HomeView() {
           </Link>
 
           <Link
-            href="/catalog"
-            onClick={() => setCatalogCategory("arabic")}
-            className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
+            href="/sellados?category=árabe"
+            className="group relative aspect-[4/3] rounded-lg overflow-hidden block border border-zinc-800/50 hover:border-[#D4AF37]/50 transition-colors"
           >
             <Image
               src="/perfume-arabe.jpeg"
@@ -167,9 +165,8 @@ export function HomeView() {
           </Link>
 
           <Link
-            href="/catalog"
-            onClick={() => setCatalogCategory("todos")}
-            className="group relative aspect-[4/3] rounded-lg overflow-hidden block"
+            href="/sellados?category=nicho"
+            className="group relative aspect-[4/3] rounded-lg overflow-hidden block border border-zinc-800/50 hover:border-[#D4AF37]/50 transition-colors"
           >
             <Image
               src="/perfume-lujo.jpeg"
