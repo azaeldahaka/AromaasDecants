@@ -60,17 +60,21 @@ export function MenuDrawer() {
               {catalogExpanded && (
                 <ul className="bg-black/50 py-2">
                   {[
-                    { id: "todos", label: "Todos" },
+                    { id: "todos", label: "Todos", isPrimary: true },
                     { id: "hombre", label: "Hombre" },
                     { id: "mujer", label: "Mujer" },
                     { id: "unisex", label: "Unisex" },
-                    { id: "ofertas", label: "Ofertas", isPrimary: true }
+                    { id: "ofertas", label: "Ofertas" }
                   ].map(cat => (
                     <li key={cat.id}>
                       <Link
                         href="/catalog"
                         onClick={() => handleCategoryClick(cat.id)}
-                        className={`block w-full px-8 py-2.5 text-sm transition-colors ${cat.isPrimary ? 'text-[#D4AF37] hover:bg-white/5' : 'text-zinc-400 hover:text-white hover:bg-white/5'}`}
+                        className={`block w-full py-2.5 text-sm transition-all ${
+                          cat.isPrimary 
+                            ? 'text-[#D4AF37] hover:bg-white/5 border-l-2 border-[#D4AF37] pl-7 pr-8 font-medium' 
+                            : 'text-zinc-400 hover:text-white hover:bg-white/5 px-8'
+                        }`}
                       >
                         {cat.label}
                       </Link>
@@ -96,12 +100,16 @@ export function MenuDrawer() {
               
               {selladosExpanded && (
                 <ul className="bg-black/50 py-2">
-                  {["Hombre", "Mujer", "Unisex"].map(cat => (
+                  {["Todos", "Hombre", "Mujer", "Unisex", "Diseñador", "Árabe", "Nicho"].map(cat => (
                     <li key={cat}>
                       <Link
                         href={`/sellados?category=${cat}`}
                         onClick={() => setIsMenuOpen(false)}
-                        className="block w-full px-8 py-2.5 text-sm text-zinc-400 hover:text-white hover:bg-white/5 transition-colors"
+                        className={`block w-full py-2.5 text-sm transition-all ${
+                          cat === "Todos" 
+                            ? "text-[#D4AF37] hover:bg-white/5 border-l-2 border-[#D4AF37] pl-7 pr-8 font-medium" 
+                            : "text-zinc-400 hover:text-white hover:bg-white/5 px-8"
+                        }`}
                       >
                         {cat}
                       </Link>

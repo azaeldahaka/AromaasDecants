@@ -76,5 +76,31 @@
     },
     "tipo": "Diseñador",
     "genero": "hombre"
+  },
+  {
+    "id": "tom-ford-bois-pacifique",
+    "marca": "Tom Ford",
+    "nombre": "Bois Pacifique EDP",
+    "precios": { "3ml": 9000, "5ml": 14000, "10ml": 26000 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Tom ford BOIS PACIFIQUE EAU DE PARFUM 3ml.png",
+      "5ml": "/Fotos Perfumes/Tom ford BOIS PACIFIQUE EAU DE PARFUM 5ml.png",
+      "10ml": "/Fotos Perfumes/Tom ford BOIS PACIFIQUE EAU DE PARFUM 10ml.png"
+    },
+    "tipo": "Nicho",
+    "genero": "unisex"
+  },
+  {
+    "id": "lattafa-honor-glory",
+    "marca": "Lattafa",
+    "nombre": "Bade'e Al Oud Honor & Glory",
+    "precios": { "3ml": 3500, "5ml": 6000, "10ml": 11000 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Lattafa bade al oud honor and glory 3ml.png",
+      "5ml": "/Fotos Perfumes/Lattafa bade al oud honor and glory 5ml.png",
+      "10ml": "/Fotos Perfumes/Lattafa bade al oud honor and glory 10ml.png"
+    },
+    "tipo": "Árabe",
+    "genero": "unisex"
   }
 ]

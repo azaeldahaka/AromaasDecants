@@ -28,7 +28,11 @@ export default function SelladosClient() {
 
   const filtered = activeCategory.toLowerCase() === "todos" 
     ? selladosData 
-    : selladosData.filter(p => p.genero.toLowerCase() === activeCategory.toLowerCase() || (activeCategory.toLowerCase() === "oferta" && p.precio < 200000))
+    : selladosData.filter(p => 
+        p.genero.toLowerCase() === activeCategory.toLowerCase() || 
+        p.tipo.toLowerCase() === activeCategory.toLowerCase() ||
+        (activeCategory.toLowerCase() === "oferta" && p.precio < 200000)
+      )
 
   return (
     <div className="pt-32 pb-16 px-4 md:px-8 max-w-7xl mx-auto min-h-screen">
@@ -39,7 +43,7 @@ export default function SelladosClient() {
        
        {/* Filters */}
        <div className="flex flex-wrap justify-center gap-3 mb-16">
-          {["Todos", "Hombre", "Mujer", "Unisex", "Oferta"].map(cat => (
+          {["Todos", "Hombre", "Mujer", "Unisex", "Diseñador", "Árabe", "Nicho", "Oferta"].map(cat => (
              <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
