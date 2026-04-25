@@ -9,6 +9,11 @@ export function CartDrawer() {
   const { isCartOpen, setIsCartOpen } = useUI()
   const { cart, removeFromCart, updateQuantity, cartTotal, isHydrated } = useCart()
 
+  const totalMl = cart.reduce((acc, item) => {
+    const ml = parseInt(item.size.replace("ml", "")) || 0
+    return acc + (ml * item.quantity)
+  }, 0)
+
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("es-AR", {
       style: "currency",
@@ -123,16 +128,34 @@ export function CartDrawer() {
 
         {cart.length > 0 && (
           <div className="p-5 border-t border-[#D4AF37]/20 bg-black/90 space-y-4">
+            
+            <div className="bg-[#D4AF37]/10 p-3 rounded-md text-center border border-[#D4AF37]/20">
+               <p className="text-[#D4AF37] text-[10px] sm:text-xs uppercase tracking-wider font-semibold">
+                 El envío será coordinado y acordado mediante WhatsApp.
+               </p>
+            </div>
+
             <div className="flex items-center justify-between">
               <span className="text-zinc-400 text-sm">Total a pagar</span>
               <span className="text-2xl font-serif text-[#D4AF37]">{formatPrice(cartTotal)}</span>
             </div>
 
+            {totalMl < 6 && (
+              <div className="text-amber-500 text-xs text-center font-medium px-3 bg-amber-500/10 border border-amber-500/20 py-2 rounded-md">
+                El pedido mínimo para finalizar la compra es de 6ml en total.
+              </div>
+            )}
+
             <button
               onClick={handleWhatsAppCheckout}
-              className="w-full py-4 bg-[#D4AF37] text-black font-semibold rounded-md flex items-center justify-center gap-2 hover:bg-[#D4AF37]/90 hover:scale-[1.02] active:scale-95 transition-all duration-200"
+              disabled={totalMl < 6}
+              className={`w-full py-4 font-semibold rounded-md flex items-center justify-center gap-2 transition-all duration-200 ${
+                totalMl < 6 
+                  ? "bg-zinc-800 text-zinc-500 cursor-not-allowed" 
+                  : "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90 hover:scale-[1.02] active:scale-95"
+              }`}
             >
-              <MessageCircle className="w-5 h-5 fill-black" />
+              <MessageCircle className={`w-5 h-5 ${totalMl < 6 ? "fill-zinc-500 text-zinc-500" : "fill-black text-black"}`} />
               Checkout por WhatsApp
             </button>
           </div>

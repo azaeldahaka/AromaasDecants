@@ -1,48 +1,9 @@
 [
   {
-    "id": "givenchy-edp",
-    "marca": "Givenchy",
-    "nombre": "Eau de Parfum",
-    "precios": { "3ml": 4500, "5ml": 7500, "10ml": 14000 },
-    "imagenes": {
-      "3ml": "/Fotos Perfumes/Givenchy eau de parfum  3ml.png",
-      "5ml": "/Fotos Perfumes/Givenchy eau de parfum  5ml.png",
-      "10ml": "/Fotos Perfumes/Givenchy eau de parfum 10 ml.png"
-    },
-    "tipo": "Diseñador",
-    "genero": "mujer"
-  },
-  {
-    "id": "givenchy-boisee",
-    "marca": "Givenchy",
-    "nombre": "Eau de Parfum Boisee",
-    "precios": { "3ml": 4800, "5ml": 7800, "10ml": 14500 },
-    "imagenes": {
-      "3ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 3 ML.png",
-      "5ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 5 ML.png",
-      "10ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 10 ML.png"
-    },
-    "tipo": "Diseñador",
-    "genero": "hombre"
-  },
-  {
-    "id": "invictus-elixir",
-    "marca": "Paco Rabanne",
-    "nombre": "Invictus Elixir",
-    "precios": { "3ml": 4200, "5ml": 6800, "10ml": 12500 },
-    "imagenes": {
-      "3ml": "/Fotos Perfumes/Invictus elixir 3 ML.png",
-      "5ml": "/Fotos Perfumes/Invictus elixir 5 ML.png",
-      "10ml": "/Fotos Perfumes/Invictus elixir 10ML.png"
-    },
-    "tipo": "Diseñador",
-    "genero": "hombre"
-  },
-  {
     "id": "jpg-le-male",
     "marca": "Jean Paul Gaultier",
     "nombre": "Le Male Elixir",
-    "precios": { "3ml": 5000, "5ml": 8200, "10ml": 15000 },
+    "precios": { "3ml": 9500, "5ml": 15500, "10ml": 26500 },
     "imagenes": {
       "3ml": "/Fotos Perfumes/Jean paul guiltier le male elixir 3 ML.png",
       "5ml": "/Fotos Perfumes/Jean paul guiltier le male elixir 5 ML.png",
@@ -52,23 +13,23 @@
     "genero": "hombre"
   },
   {
-    "id": "tom-ford-orchid",
-    "marca": "Tom Ford",
-    "nombre": "Black Orchid EDP",
-    "precios": { "3ml": 8500, "5ml": 13500, "10ml": 25000 },
+    "id": "invictus-elixir",
+    "marca": "Paco Rabanne",
+    "nombre": "Invictus Elixir",
+    "precios": { "3ml": 9500, "5ml": 15500, "10ml": 26500 },
     "imagenes": {
-      "3ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 3ml.png",
-      "5ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 5ml.png",
-      "10ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 10ml.png"
+      "3ml": "/Fotos Perfumes/Invictus elixir 3 ML.png",
+      "5ml": "/Fotos Perfumes/Invictus elixir 5 ML.png",
+      "10ml": "/Fotos Perfumes/Invictus elixir 10ML.png"
     },
-    "tipo": "Nicho",
-    "genero": "unisex"
+    "tipo": "Diseñador",
+    "genero": "hombre"
   },
   {
     "id": "valentino-roma",
     "marca": "Valentino",
     "nombre": "Born in Roma EDT",
-    "precios": { "3ml": 4500, "5ml": 7500, "10ml": 13800 },
+    "precios": { "3ml": 12500, "5ml": 19000, "10ml": 34500 },
     "imagenes": {
       "3ml": "/Fotos Perfumes/Valentino born in roma edt  3 ml.png",
       "5ml": "/Fotos Perfumes/Valentino born in roma edt  5 ml.png",
@@ -78,10 +39,49 @@
     "genero": "hombre"
   },
   {
+    "id": "givenchy-boisee",
+    "marca": "Givenchy",
+    "nombre": "Eau de Parfum Boisee",
+    "precios": { "3ml": 10500, "5ml": 15000, "10ml": 25500 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 3 ML.png",
+      "5ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 5 ML.png",
+      "10ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 10 ML.png"
+    },
+    "tipo": "Diseñador",
+    "genero": "hombre"
+  },
+  {
+    "id": "givenchy-edp",
+    "marca": "Givenchy",
+    "nombre": "Eau de Parfum",
+    "precios": { "3ml": 10500, "5ml": 15000, "10ml": 25500 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Givenchy eau de parfum  3ml.png",
+      "5ml": "/Fotos Perfumes/Givenchy eau de parfum  5ml.png",
+      "10ml": "/Fotos Perfumes/Givenchy eau de parfum 10 ml.png"
+    },
+    "tipo": "Diseñador",
+    "genero": "mujer"
+  },
+  {
+    "id": "tom-ford-orchid",
+    "marca": "Tom Ford",
+    "nombre": "Black Orchid EDP",
+    "precios": { "3ml": 14000, "5ml": 20500, "10ml": 38000 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 3ml.png",
+      "5ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 5ml.png",
+      "10ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 10ml.png"
+    },
+    "tipo": "Nicho",
+    "genero": "unisex"
+  },
+  {
     "id": "tom-ford-bois-pacifique",
     "marca": "Tom Ford",
     "nombre": "Bois Pacifique EDP",
-    "precios": { "3ml": 9000, "5ml": 14000, "10ml": 26000 },
+    "precios": { "3ml": 14000, "5ml": 20500, "10ml": 38000 },
     "imagenes": {
       "3ml": "/Fotos Perfumes/Tom ford BOIS PACIFIQUE EAU DE PARFUM 3ml.png",
       "5ml": "/Fotos Perfumes/Tom ford BOIS PACIFIQUE EAU DE PARFUM 5ml.png",
@@ -94,7 +94,7 @@
     "id": "lattafa-honor-glory",
     "marca": "Lattafa",
     "nombre": "Bade'e Al Oud Honor & Glory",
-    "precios": { "3ml": 3500, "5ml": 6000, "10ml": 11000 },
+    "precios": { "3ml": 4000, "5ml": 6500, "10ml": 11500 },
     "imagenes": {
       "3ml": "/Fotos Perfumes/Lattafa bade al oud honor and glory 3ml.png",
       "5ml": "/Fotos Perfumes/Lattafa bade al oud honor and glory 5ml.png",
