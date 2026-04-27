@@ -1,6 +1,6 @@
 "use client"
 
-import { ChevronLeft, ChevronRight, Shield, Truck, Sparkles } from "lucide-react"
+import { ChevronLeft, ChevronRight, Shield, Truck, Sparkles, Instagram } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect, useCallback } from "react"
@@ -253,8 +253,17 @@ export function HomeView() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 border-t border-border text-center">
-        <p className="text-xs text-muted-foreground">
+      <footer className="py-10 px-4 border-t border-border flex flex-col items-center gap-6">
+        <a 
+          href="https://www.instagram.com/aromaasdecants/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors"
+        >
+          <Instagram className="w-5 h-5" />
+          <span className="text-sm tracking-[0.2em] uppercase font-semibold">@aromaasdecants</span>
+        </a>
+        <p className="text-xs text-muted-foreground text-center">
           © 2024 AromaasDecants. Todos los derechos reservados.
         </p>
       </footer>

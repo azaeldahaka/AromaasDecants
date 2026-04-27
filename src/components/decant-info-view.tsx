@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowLeft, Droplets, Shield, Beaker, Package } from "lucide-react"
+import { ArrowLeft, Droplets, Shield, Beaker, Package, Instagram } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -143,8 +143,23 @@ export function DecantInfoView() {
           </div>
         </section>
 
+        {/* Contacto Social */}
+        <section className="bg-zinc-950 p-6 sm:p-8 rounded-xl border border-[#D4AF37]/20 text-center mb-8">
+          <h3 className="text-white font-serif text-xl mb-4">Únete a nuestra comunidad</h3>
+          <p className="text-zinc-400 text-sm mb-6 max-w-md mx-auto">Síguenos en Instagram para enterarte de los últimos ingresos, ofertas exclusivas y novedades sobre la perfumería de nicho.</p>
+          <a
+            href="https://www.instagram.com/aromaasdecants/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-[#D4AF37] text-[#D4AF37] font-semibold py-3 px-8 rounded-lg hover:bg-[#D4AF37] hover:text-black transition-all"
+          >
+            <Instagram className="w-5 h-5" />
+            Síguenos en Instagram
+          </a>
+        </section>
+
         {/* CTA */}
-        <section className="pt-8 pb-12">
+        <section className="pt-4 pb-12 text-center">
           <Link
             href="/catalog"
             className="w-full sm:w-auto inline-flex items-center justify-center py-4 px-12 bg-white text-black font-bold uppercase tracking-wider rounded-xl hover:bg-zinc-200 transition-all hover:scale-105 active:scale-95"

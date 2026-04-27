@@ -91,6 +91,84 @@
     "genero": "unisex"
   },
   {
+    "id": "bare-rose",
+    "marca": "Victoria's Secret",
+    "nombre": "Bare Rose",
+    "precios": { "3ml": 8000, "5ml": 11000, "10ml": 17500 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Victoria secret bare rose 3ml.png",
+      "5ml": "/Fotos Perfumes/Victoria secret bare rose 5ml.png",
+      "10ml": "/Fotos Perfumes/Victoria secret bare rose 10ml.png"
+    },
+    "tipo": "Diseñador",
+    "genero": "mujer"
+  },
+  {
+    "id": "elysees-fashions",
+    "marca": "Elysees Fashions",
+    "nombre": "Elysees Fashions",
+    "precios": { "3ml": 4000, "5ml": 6000, "10ml": 11000 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/douce nuit elysees fashion 3ml.png",
+      "5ml": "/Fotos Perfumes/douce nuit elysees fashion 5ml.png",
+      "10ml": "/Fotos Perfumes/douce nuit elysees fashion 10ml.png"
+    },
+    "tipo": "Diseñador",
+    "genero": "mujer"
+  },
+  {
+    "id": "hawas-fire",
+    "marca": "Rasasi",
+    "nombre": "Hawas Fire",
+    "precios": { "3ml": 4500, "5ml": 8000, "10ml": 13000 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Hawas fire 3ml.png",
+      "5ml": "/Fotos Perfumes/Hawas fire 5ml.png",
+      "10ml": "/Fotos Perfumes/Hawas fire 10ml.png"
+    },
+    "tipo": "Árabe",
+    "genero": "hombre"
+  },
+  {
+    "id": "hawas-tropical",
+    "marca": "Rasasi",
+    "nombre": "Hawas Tropical",
+    "precios": { "3ml": 5500, "5ml": 9000, "10ml": 15000 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Hawas tropical 3ml.png",
+      "5ml": "/Fotos Perfumes/Hawas tropical 5ml.png",
+      "10ml": "/Fotos Perfumes/Hawas tropical 10ml.png"
+    },
+    "tipo": "Árabe",
+    "genero": "unisex"
+  },
+  {
+    "id": "afnan-9pm",
+    "marca": "Afnan",
+    "nombre": "9PM",
+    "precios": { "3ml": 4500, "5ml": 7000, "10ml": 12500 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/9 PM 3 ml.png",
+      "5ml": "/Fotos Perfumes/9 PM 5 ml.png",
+      "10ml": "/Fotos Perfumes/9 PM 10 ml.png"
+    },
+    "tipo": "Árabe",
+    "genero": "hombre"
+  },
+  {
+    "id": "the-kingdom",
+    "marca": "Lattafa",
+    "nombre": "The Kingdom",
+    "precios": { "3ml": 5000, "5ml": 8000, "10ml": 14000 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Lattafa the kindgom 3ml.png",
+      "5ml": "/Fotos Perfumes/Lattafa the kindgom 5ml.png",
+      "10ml": "/Fotos Perfumes/Lattafa the kindgom 10ml.png"
+    },
+    "tipo": "Árabe",
+    "genero": "hombre"
+  },
+  {
     "id": "lattafa-honor-glory",
     "marca": "Lattafa",
     "nombre": "Bade'e Al Oud Honor & Glory",
@@ -102,5 +180,18 @@
     },
     "tipo": "Árabe",
     "genero": "unisex"
+  },
+  {
+    "id": "lattafa-eclaire",
+    "marca": "Lattafa",
+    "nombre": "Eclaire",
+    "precios": { "3ml": 3600, "5ml": 6000, "10ml": 11000 },
+    "imagenes": {
+      "3ml": "/Fotos Perfumes/Lattafa eclaire 3ml.png",
+      "5ml": "/Fotos Perfumes/Lattafa eclaire 5ml.png",
+      "10ml": "/Fotos Perfumes/Lattafa eclaire 10ml.png"
+    },
+    "tipo": "Árabe",
+    "genero": "mujer"
   }
 ]
