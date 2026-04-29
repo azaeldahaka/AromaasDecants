@@ -3,6 +3,39 @@ import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ChevronLeft } from "lucide-react"
 import { AddToCartActions } from "@/components/catalog/AddToCartActions"
+import type { Metadata } from 'next'
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const resolvedParams = await params
+  const product = productosData.find(p => p.id === resolvedParams.id)
+
+  if (!product) {
+    return { title: 'Producto no encontrado' }
+  }
+
+  const title = `Decant ${product.nombre} - ${product.marca}`
+  const description = `Adquiere un decant de ${product.nombre} por ${product.marca}. Disponible en 3ml, 5ml y 10ml.`
+  const imageUrl = product.imagenes["10ml"] || '/og-image.jpg'
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url: `/product/${product.id}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 800,
+          height: 800,
+          alt: title,
+        },
+      ],
+    },
+  }
+}
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params

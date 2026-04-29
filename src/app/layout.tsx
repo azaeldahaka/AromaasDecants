@@ -14,9 +14,34 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'AromaasDecants | Perfumería de Lujo',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://aromaas-decants.vercel.app'),
+  title: {
+    default: 'AromaasDecants | Perfumería de Lujo',
+    template: '%s | AromaasDecants',
+  },
   description: 'Descubre fragancias de diseñador y perfumería árabe en presentaciones decant. 100% originales, extracción estéril.',
   generator: 'v0.app',
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    url: '/',
+    siteName: 'AromaasDecants',
+    title: 'AromaasDecants | Perfumería de Lujo',
+    description: 'Descubre fragancias de diseñador y perfumería árabe en presentaciones decant. 100% originales.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AromaasDecants Portada',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AromaasDecants | Perfumería de Lujo',
+    description: 'Descubre fragancias de diseñador y perfumería árabe en presentaciones decant.',
+  },
   icons: {
     icon: [
       {
