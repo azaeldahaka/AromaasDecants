@@ -7,6 +7,10 @@ __v0_jsx-dev-runtime.ts
 .vercel/
 next.user-config.*
 
+# Playwright
+playwright-report/
+test-results/
+
 # Environment variables
 .env*.local
 
