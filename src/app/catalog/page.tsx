@@ -11,8 +11,11 @@ function CatalogContent() {
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    const cat = searchParams.get("category")
+    let cat = searchParams.get("category")
     if (cat) {
+      cat = cat.toLowerCase()
+      if (cat === "diseñador") cat = "designer"
+      if (cat === "arabe" || cat === "árabe") cat = "arabic"
       setCatalogCategory(cat)
     }
   }, [searchParams, setCatalogCategory])

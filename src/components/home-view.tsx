@@ -24,7 +24,7 @@ const heroSlides = [
     image: "/perfume-arabe.jpeg",
     title: "Perfumería Árabe",
     subtitle: "Aromas exóticos y duraderos",
-    link: "/catalog?category=árabe"
+    link: "/catalog?category=arabe"
   }
 ]
 
@@ -87,7 +87,7 @@ export function HomeView() {
               </p>
               <Link
                 href={slide.link}
-                className="px-8 py-3 bg-[#D4AF37] text-black font-semibold rounded-md hover:bg-[#D4AF37]/90 transition-colors"
+                className="relative z-10 pointer-events-auto px-8 py-3 bg-[#D4AF37] text-black font-semibold rounded-md hover:bg-[#D4AF37]/90 transition-colors"
               >
                 Ver Catálogo
               </Link>
