@@ -7,7 +7,6 @@ import { test, expect } from "@playwright/test";
  * - Los chips de filtrado existen
  * - Al hacer click en "Árabes", la grilla se actualiza
  *   mostrando solo productos de esa categoría
- * - Al hacer click en "Árabes", no aparecen productos de tipo "Diseñador"
  */
 test.describe("Catálogo y Filtros", () => {
   test.beforeEach(async ({ page }) => {
@@ -15,13 +14,14 @@ test.describe("Catálogo y Filtros", () => {
   });
 
   test("la página del catálogo carga correctamente", async ({ page }) => {
-    // El heading del catálogo debe estar visible
-    const heading = page.getByRole("heading", { level: 1 });
+    // El h1 del contenido por defecto es "Nuestra Colección"
+    // Usamos el selector por nombre para evitar strict mode violation con el h1 del Navbar
+    const heading = page.getByRole("heading", { name: /Nuestra Colección|Árabes|Diseñador|Para Hombre|Para Mujer/i });
     await expect(heading).toBeVisible();
   });
 
   test("todos los chips de filtro deben estar presentes", async ({ page }) => {
-    // Los filtros disponibles en /catalog son: Nuestra Colección, Árabes, Diseñador, Para Hombre, Para Mujer
+    // Los filtros en /catalog: Nuestra Colección, Árabes, Diseñador, Para Hombre, Para Mujer
     await expect(
       page.getByRole("button", { name: /Nuestra Colección/i })
     ).toBeVisible();
@@ -40,23 +40,16 @@ test.describe("Catálogo y Filtros", () => {
   });
 
   test("el filtro Árabes debe mostrar productos árabes", async ({ page }) => {
-    // Hace click en el filtro "Árabes"
     const arabicFilter = page.getByRole("button", { name: /Árabes/i });
     await arabicFilter.click();
 
-    // Espera a que la grilla se actualice
     await page.waitForTimeout(300);
 
-    // Debe aparecer al menos un producto árabe conocido
-    // "Hawas Fire" es árabe (tipo: "Árabe") y debe estar visible
-    const hawasCard = page.getByText("Hawas Fire");
-    await expect(hawasCard).toBeVisible();
+    // "Hawas Fire" es árabe y debe estar visible
+    await expect(page.getByText("Hawas Fire")).toBeVisible();
 
-    // El producto "Le Male Elixir" de JPG es de tipo Diseñador, no debe estar visible
-    const designerProduct = page.getByRole("link", {
-      name: /Le Male Elixir/i,
-    });
-    await expect(designerProduct).not.toBeVisible();
+    // "Le Male Elixir" de JPG es Diseñador, no debe estar visible
+    await expect(page.getByText("Le Male Elixir")).not.toBeVisible();
   });
 
   test("el filtro Diseñador no debe mostrar productos árabes", async ({
@@ -68,20 +61,19 @@ test.describe("Catálogo y Filtros", () => {
     await page.waitForTimeout(300);
 
     // "Le Male Elixir" de JPG es diseñador, debe aparecer
-    const jPGCard = page.getByText("Le Male Elixir");
-    await expect(jPGCard).toBeVisible();
+    await expect(page.getByText("Le Male Elixir")).toBeVisible();
 
     // "Hawas Fire" es árabe, NO debe aparecer
-    const arabicProduct = page.getByText("Hawas Fire");
-    await expect(arabicProduct).not.toBeVisible();
+    await expect(page.getByText("Hawas Fire")).not.toBeVisible();
   });
 
   test("el filtro activo debe destacarse visualmente", async ({ page }) => {
     const arabicFilter = page.getByRole("button", { name: /Árabes/i });
     await arabicFilter.click();
 
-    // El filtro activo tiene la clase bg-[#D4AF37] — verificamos con aria o clases
-    // Verificamos que el chip tiene la clase de activo (texto negro sobre fondo dorado)
+    await page.waitForTimeout(300);
+
+    // El filtro activo tiene bg-[#D4AF37] (fondo dorado)
     await expect(arabicFilter).toHaveClass(/bg-\[#D4AF37\]/);
   });
 });
