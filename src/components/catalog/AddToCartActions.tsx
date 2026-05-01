@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useCart } from "@/context/CartContext"
-import { Shield, Sparkles, Minus, Plus } from "lucide-react"
+import { Shield, Sparkles, Minus, Plus, Share2 } from "lucide-react"
 import Image from "next/image"
 import { toast } from "sonner"
 
@@ -32,6 +32,26 @@ export function AddToCartActions({ product }: { product: any }) {
     })
   }
 
+  const handleShare = async () => {
+    const shareData = {
+      title: product.nombre,
+      text: product.descripcion,
+      url: `${window.location.origin}/product/${product.id}`,
+    }
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData)
+      } else {
+        await navigator.clipboard.writeText(shareData.url)
+        toast('Enlace copiado al portapapeles', {
+          style: { background: '#18181b', color: '#fff', border: '1px solid rgba(212, 175, 55, 0.2)' }
+        })
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-6">
       {/* Lado de Imagen Reactiva */}
@@ -49,12 +69,29 @@ export function AddToCartActions({ product }: { product: any }) {
 
       {/* Lado de Información y Componente Interactivo */}
       <div className="flex flex-col py-4">
-        <p className="text-[#D4AF37] tracking-widest uppercase text-sm mb-2 font-semibold">
-          {product.marca} | {product.genero}
-        </p>
-        <h1 className="text-4xl lg:text-5xl font-serif text-white mb-6 leading-tight max-w-xl">
-          {product.nombre}
-        </h1>
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-[#D4AF37] tracking-widest uppercase text-sm mb-2 font-semibold">
+              {product.marca} | {product.genero}
+            </p>
+            <h1 className="text-4xl lg:text-5xl font-serif text-white mb-4 leading-tight max-w-xl">
+              {product.nombre}
+            </h1>
+          </div>
+          <button
+            onClick={handleShare}
+            className="p-3 text-zinc-400 bg-zinc-900 border border-zinc-800 rounded-xl hover:text-[#D4AF37] hover:border-[#D4AF37]/30 transition-all flex-shrink-0 mt-1"
+            aria-label="Compartir"
+          >
+            <Share2 className="w-5 h-5" />
+          </button>
+        </div>
+        
+        {product.descripcion && (
+          <p className="text-zinc-400 text-lg max-w-lg mb-8 leading-relaxed">
+            {product.descripcion}
+          </p>
+        )}
         
         <p className="text-3xl text-white font-bold mb-8">{formatPrice(currentPrice * quantity)}</p>
 

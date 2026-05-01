@@ -5,8 +5,6 @@ import Image from "next/image"
 import selladosData from "@/data/sellados.json"
 import { useSearchParams } from "next/navigation"
 import { useState, useEffect } from "react"
-import { Share2 } from "lucide-react"
-import { toast } from "sonner"
 
 export default function SelladosClient() {
   const searchParams = useSearchParams()
@@ -26,28 +24,6 @@ export default function SelladosClient() {
       currency: "ARS",
       minimumFractionDigits: 0
     }).format(price)
-  }
-
-  const handleShare = async (e: React.MouseEvent, product: any) => {
-    e.preventDefault()
-    e.stopPropagation()
-    const shareData = {
-      title: product.nombre,
-      text: product.descripcion,
-      url: `${window.location.origin}/sellados/${product.id}`,
-    }
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData)
-      } else {
-        await navigator.clipboard.writeText(shareData.url)
-        toast('Enlace copiado al portapapeles', {
-          style: { background: '#18181b', color: '#fff', border: '1px solid rgba(212, 175, 55, 0.2)' }
-        })
-      }
-    } catch (err) {
-      console.error(err)
-    }
   }
 
   const filtered = activeCategory.toLowerCase() === "todos" 
@@ -90,25 +66,14 @@ export default function SelladosClient() {
                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10" />
                    <Image src={product.imagen} fill alt={product.nombre} className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
                 </div>
-                <div className="p-6 flex flex-col gap-2 flex-grow border-t border-white/5">
-                   <div className="flex justify-between items-start gap-2">
-                     <div className="flex-1 min-w-0">
-                       <p className="text-xs text-[#D4AF37] tracking-[0.2em] uppercase font-bold">{product.marca}</p>
-                       <h3 className="text-white font-serif text-xl truncate">{product.nombre}</h3>
-                     </div>
-                     <button
-                       onClick={(e) => handleShare(e, product)}
-                       className="p-1 text-zinc-400 hover:text-[#D4AF37] transition-colors flex-shrink-0"
-                       aria-label="Compartir producto"
-                     >
-                       <Share2 className="w-5 h-5" />
-                     </button>
-                   </div>
+                 <div className="p-6 flex flex-col gap-2 flex-grow border-t border-white/5">
+                   <p className="text-xs text-[#D4AF37] tracking-[0.2em] uppercase font-bold">{product.marca}</p>
+                   <h3 className="text-white font-serif text-xl truncate">{product.nombre}</h3>
                    {product.descripcion && (
                      <p className="text-sm text-gray-400 line-clamp-2 mt-1 mb-2">{product.descripcion}</p>
                    )}
                    <p className="text-zinc-400 text-sm mt-auto pt-4 border-t border-white/5">{formatPrice(product.precio)}</p>
-                </div>
+                 </div>
              </Link>
           ))}
           {filtered.length === 0 && (

@@ -254,9 +254,9 @@ export function HomeView() {
 
       {/* Footer */}
       <footer className="py-10 px-4 border-t border-border flex flex-col items-center gap-6">
-        <a 
-          href="https://www.instagram.com/aromaasdecants/" 
-          target="_blank" 
+        <a
+          href="https://www.instagram.com/aromaasdecants/"
+          target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-[#D4AF37] hover:text-white transition-colors"
         >
@@ -264,7 +264,7 @@ export function HomeView() {
           <span className="text-sm tracking-[0.2em] uppercase font-semibold">@aromaasdecants</span>
         </a>
         <p className="text-xs text-muted-foreground text-center">
-          © 2024 AromaasDecants. Todos los derechos reservados.
+          © 2026 AromaasDecants. Todos los derechos reservados.
         </p>
       </footer>
     </div>

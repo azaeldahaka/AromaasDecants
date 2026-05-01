@@ -4,7 +4,6 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useCart } from "@/context/CartContext"
-import { Share2 } from "lucide-react"
 import { toast } from "sonner"
 
 interface Precios {
@@ -52,28 +51,6 @@ export function ProductCard({ product }: { product: Product }) {
     })
   }
 
-  const handleShare = async (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    const shareData = {
-      title: product.nombre,
-      text: product.descripcion,
-      url: `${window.location.origin}/product/${product.id}`,
-    }
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData)
-      } else {
-        await navigator.clipboard.writeText(shareData.url)
-        toast('Enlace copiado al portapapeles', {
-          style: { background: '#18181b', color: '#fff', border: '1px solid rgba(212, 175, 55, 0.2)' }
-        })
-      }
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
   return (
     <div className="group flex flex-col bg-black border border-[#D4AF37]/20 rounded-xl overflow-hidden hover:border-[#D4AF37]/60 transition-all duration-300 hover:shadow-lg hover:shadow-[#D4AF37]/10">
       <Link href={`/product/${product.id}`} className="relative aspect-square bg-zinc-950 overflow-hidden flex items-center justify-center p-4">
@@ -107,21 +84,12 @@ export function ProductCard({ product }: { product: Product }) {
 
         <div className="flex items-center justify-between mt-auto">
           <span className="text-xl font-bold text-white tracking-wide">{formatPrice(currentPrice)}</span>
-          <div className="flex gap-2">
-            <button
-              onClick={handleShare}
-              className="p-2 text-zinc-400 hover:text-[#D4AF37] transition-colors"
-              aria-label="Compartir producto"
-            >
-              <Share2 className="w-5 h-5" />
-            </button>
-            <button
-              onClick={handleAdd}
-              className="px-4 py-2 bg-transparent text-[#D4AF37] text-sm font-semibold rounded-md border border-[#D4AF37]/30 hover:bg-[#D4AF37] hover:text-black transition-all"
-            >
-              Añadir
-            </button>
-          </div>
+          <button
+            onClick={handleAdd}
+            className="px-4 py-2 bg-transparent text-[#D4AF37] text-sm font-semibold rounded-md border border-[#D4AF37]/30 hover:bg-[#D4AF37] hover:text-black transition-all"
+          >
+            Añadir
+          </button>
         </div>
       </div>
     </div>

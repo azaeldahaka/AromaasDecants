@@ -4,8 +4,9 @@ import selladosData from "@/data/sellados.json"
 import Image from "next/image"
 import Link from "next/link"
 import { useParams, notFound } from "next/navigation"
-import { ChevronLeft, Minus, Plus, MessageCircle, ShieldCheck } from "lucide-react"
+import { ChevronLeft, Minus, Plus, MessageCircle, ShieldCheck, Share2 } from "lucide-react"
 import { useState } from "react"
+import { toast } from "sonner"
 
 export default function SelladoDetailPage() {
   const params = useParams()
@@ -27,6 +28,26 @@ export default function SelladoDetailPage() {
   const handleWhatsApp = () => {
     const text = `Hola AromaasDecants, quería consultar el stock y precio del perfume sellado: ${product.nombre} (${product.marca}) - Cantidad: ${quantity}`
     window.open(`https://wa.me/5493874431282?text=${encodeURIComponent(text)}`, '_blank')
+  }
+
+  const handleShare = async () => {
+    const shareData = {
+      title: product.nombre,
+      text: product.descripcion,
+      url: `${window.location.origin}/sellados/${product.id}`,
+    }
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData)
+      } else {
+        await navigator.clipboard.writeText(shareData.url)
+        toast('Enlace copiado al portapapeles', {
+          style: { background: '#18181b', color: '#fff', border: '1px solid rgba(212, 175, 55, 0.2)' }
+        })
+      }
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   return (
@@ -58,12 +79,23 @@ export default function SelladoDetailPage() {
             </span>
           </div>
           
-          <p className="text-[#D4AF37] tracking-[0.3em] uppercase text-sm mb-2 font-bold">
-           {product.marca} | {product.genero}
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-tight text-balance">
-           {product.nombre}
-          </h1>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-[#D4AF37] tracking-[0.3em] uppercase text-sm mb-2 font-bold">
+               {product.marca} | {product.genero}
+              </p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-tight text-balance">
+               {product.nombre}
+              </h1>
+            </div>
+            <button
+              onClick={handleShare}
+              className="p-3 text-zinc-400 bg-zinc-900 border border-zinc-800 rounded-xl hover:text-[#D4AF37] hover:border-[#D4AF37]/30 transition-all flex-shrink-0"
+              aria-label="Compartir"
+            >
+              <Share2 className="w-5 h-5" />
+            </button>
+          </div>
           <p className="text-zinc-400 leading-relaxed max-w-lg mb-8 text-lg">
             {product.descripcion}
           </p>
