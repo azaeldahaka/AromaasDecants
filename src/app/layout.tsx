@@ -71,6 +71,7 @@ import { CartProvider } from '@/context/CartContext'
 import { Navbar } from '@/components/layout/Navbar'
 import { MenuDrawer } from '@/components/menu-drawer'
 import { CartDrawer } from '@/components/cart-drawer'
+import { Toaster } from 'sonner'
 
 export default function RootLayout({
   children,
@@ -85,6 +86,7 @@ export default function RootLayout({
             <Navbar />
             <MenuDrawer />
             <CartDrawer />
+            <Toaster position="bottom-right" richColors theme="dark" />
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
               {children}
             </main>

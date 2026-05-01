@@ -10,7 +10,8 @@
       "10ml": "/Fotos Perfumes/Jean paul guiltier le male elixir 10 ML.png"
     },
     "tipo": "Diseñador",
-    "genero": "hombre"
+    "genero": "hombre",
+    "descripcion": "Una fragancia intensa, nocturna y seductora con notas ricas de vainilla, miel y lavanda."
   },
   {
     "id": "invictus-elixir",
@@ -23,7 +24,8 @@
       "10ml": "/Fotos Perfumes/Invictus elixir 10ML.png"
     },
     "tipo": "Diseñador",
-    "genero": "hombre"
+    "genero": "hombre",
+    "descripcion": "Potente elixir amaderado y especiado, diseñado para el éxito y la victoria absoluta."
   },
   {
     "id": "valentino-roma",
@@ -36,7 +38,8 @@
       "10ml": "/Fotos Perfumes/Valentino born in roma edt  10 ml.png"
     },
     "tipo": "Diseñador",
-    "genero": "hombre"
+    "genero": "hombre",
+    "descripcion": "Aroma moderno y vibrante con notas de salvia, vetiver ahumado y un toque mineral."
   },
   {
     "id": "givenchy-boisee",
@@ -49,7 +52,8 @@
       "10ml": "/Fotos Perfumes/Givenchy eau de parfum boisse 10 ML.png"
     },
     "tipo": "Diseñador",
-    "genero": "hombre"
+    "genero": "hombre",
+    "descripcion": "Elegancia pura en un acorde amaderado con iris empolvado, pimienta negra y maderas profundas."
   },
   {
     "id": "givenchy-edp",
@@ -62,7 +66,8 @@
       "10ml": "/Fotos Perfumes/Givenchy eau de parfum 10 ml.png"
     },
     "tipo": "Diseñador",
-    "genero": "mujer"
+    "genero": "mujer",
+    "descripcion": "Una explosión floral y amaderada, sofisticada e inolvidable para la mujer moderna."
   },
   {
     "id": "tom-ford-orchid",
@@ -75,7 +80,8 @@
       "10ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 10ml.png"
     },
     "tipo": "Nicho",
-    "genero": "unisex"
+    "genero": "unisex",
+    "descripcion": "Lujo oscuro y enigmático. Una poción narcótica de orquídea negra, especias y trufa."
   },
   {
     "id": "tom-ford-bois-pacifique",
@@ -88,7 +94,8 @@
       "10ml": "/Fotos Perfumes/Tom ford BOIS PACIFIQUE EAU DE PARFUM 10ml.png"
     },
     "tipo": "Nicho",
-    "genero": "unisex"
+    "genero": "unisex",
+    "descripcion": "Misterio oceánico y maderas oscuras se funden en una esencia nicho verdaderamente embriagadora."
   },
   {
     "id": "bare-rose",
@@ -101,7 +108,8 @@
       "10ml": "/Fotos Perfumes/Victoria secret bare rose 10ml.png"
     },
     "tipo": "Diseñador",
-    "genero": "mujer"
+    "genero": "mujer",
+    "descripcion": "Rosas frescas y almizcles blancos que se adaptan a la química única de tu piel."
   },
   {
     "id": "elysees-fashions",
@@ -114,7 +122,8 @@
       "10ml": "/Fotos Perfumes/douce nuit elysees fashion 10ml.png"
     },
     "tipo": "Diseñador",
-    "genero": "mujer"
+    "genero": "mujer",
+    "descripcion": "Dulzura encantadora y jovial, ideal para iluminar tus días con un rastro inolvidable."
   },
   {
     "id": "hawas-fire",
@@ -127,7 +136,8 @@
       "10ml": "/Fotos Perfumes/Hawas fire 10ml.png"
     },
     "tipo": "Árabe",
-    "genero": "hombre"
+    "genero": "hombre",
+    "descripcion": "Fuego especiado y maderas cálidas que despiertan una pasión oriental inconfundible."
   },
   {
     "id": "hawas-tropical",
@@ -140,7 +150,8 @@
       "10ml": "/Fotos Perfumes/Hawas tropical 10ml.png"
     },
     "tipo": "Árabe",
-    "genero": "unisex"
+    "genero": "unisex",
+    "descripcion": "Un cóctel frutal exótico, refrescante y jugoso que te transporta al paraíso."
   },
   {
     "id": "afnan-9pm",
@@ -153,7 +164,8 @@
       "10ml": "/Fotos Perfumes/9 PM 10 ml.png"
     },
     "tipo": "Árabe",
-    "genero": "hombre"
+    "genero": "hombre",
+    "descripcion": "La opción definitiva para la fiesta. Dulce, magnética y con notas de manzana y vainilla."
   },
   {
     "id": "the-kingdom",
@@ -166,7 +178,8 @@
       "10ml": "/Fotos Perfumes/Lattafa the kindgom 10ml p.png"
     },
     "tipo": "Árabe",
-    "genero": "hombre"
+    "genero": "hombre",
+    "descripcion": "Un rey árabe majestuoso, coronado con maderas ricas, incienso y especias opulentas."
   },
   {
     "id": "lattafa-honor-glory",
@@ -179,7 +192,8 @@
       "10ml": "/Fotos Perfumes/Lattafa bade al oud honor and glory 10ml.png"
     },
     "tipo": "Árabe",
-    "genero": "unisex"
+    "genero": "unisex",
+    "descripcion": "Piña cremosa y crème brûlée que desatan un dulzor exótico y lujoso sin precedentes."
   },
   {
     "id": "lattafa-eclaire",
@@ -192,6 +206,7 @@
       "10ml": "/Fotos Perfumes/Lattafa eclaire 10ml p.png"
     },
     "tipo": "Árabe",
-    "genero": "mujer"
+    "genero": "mujer",
+    "descripcion": "Un postre hecho perfume. Caramelo, leche cálida y azúcar hilado para la máxima seducción."
   }
 ]

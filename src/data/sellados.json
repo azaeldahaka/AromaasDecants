@@ -7,7 +7,7 @@
     "imagen": "/Perfumes sellados/Hawas malibu.PNG",
     "tipo": "Árabe",
     "genero": "Hombre",
-    "descripcion": "Perfume sellado original."
+    "descripcion": "Frescura oceánica y cítricos chispeantes que evocan el espíritu indomable del verano infinito."
   },
   {
     "id": "afnan-9pm-sellado",
@@ -17,7 +17,7 @@
     "imagen": "/Perfumes sellados/Afnan 9 PM.PNG",
     "tipo": "Árabe",
     "genero": "Hombre",
-    "descripcion": "Perfume sellado original."
+    "descripcion": "La opción definitiva para la fiesta. Dulce, magnética y con notas de manzana y vainilla."
   },
   {
     "id": "odyssey-mandarin-sky-sellado",
@@ -27,7 +27,7 @@
     "imagen": "/Perfumes sellados/Mandarin sky.PNG",
     "tipo": "Árabe",
     "genero": "Hombre",
-    "descripcion": "Perfume sellado original."
+    "descripcion": "Cítricos luminosos y caramelo envolvente que crean una estela dorada e hipnótica."
   },
   {
     "id": "club-de-nuit-sellado",
@@ -37,7 +37,7 @@
     "imagen": "/Perfumes sellados/Club de nuit.PNG",
     "tipo": "Árabe",
     "genero": "Hombre",
-    "descripcion": "Perfume sellado original."
+    "descripcion": "Una bestia cítrica y ahumada, líder indiscutida en cumplidos y presencia dominante."
   },
   {
     "id": "club-de-nuit-urban-elixir-sellado",
@@ -47,7 +47,7 @@
     "imagen": "/Perfumes sellados/Club de nuit Urban elixir.PNG",
     "tipo": "Árabe",
     "genero": "Hombre",
-    "descripcion": "Perfume sellado original."
+    "descripcion": "Fusión moderna y versátil de frescura especiada y maderas, perfecta para cualquier ocasión."
   },
   {
     "id": "jpg-le-male-sellado",
@@ -57,7 +57,7 @@
     "imagen": "/Perfumes sellados/Jean paul guiltier le male elixir .PNG",
     "tipo": "Diseñador",
     "genero": "Hombre",
-    "descripcion": "Perfume sellado original."
+    "descripcion": "Una fragancia intensa, nocturna y seductora con notas ricas de vainilla, miel y lavanda."
   },
   {
     "id": "lattafa-khamrah-sellado",
@@ -67,6 +67,6 @@
     "imagen": "/Perfumes sellados/Perfume Khamrah .PNG",
     "tipo": "Árabe",
     "genero": "Hombre",
-    "descripcion": "Perfume sellado original."
+    "descripcion": "Un licor dulce de dátiles, praliné y especias cálidas. Lujo oriental en su máxima expresión."
   }
 ]

@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useCart } from "@/context/CartContext"
 import { Shield, Sparkles, Minus, Plus } from "lucide-react"
 import Image from "next/image"
+import { toast } from "sonner"
 
 export function AddToCartActions({ product }: { product: any }) {
   const { addToCart } = useCart()
@@ -26,6 +27,9 @@ export function AddToCartActions({ product }: { product: any }) {
       currentPrice,
       quantity
     )
+    toast.success(`${product.nombre} añadido al carrito`, {
+      style: { background: '#18181b', color: '#D4AF37', border: '1px solid rgba(212, 175, 55, 0.2)' }
+    })
   }
 
   return (

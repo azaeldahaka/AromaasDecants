@@ -5,14 +5,23 @@ import { useUI } from "@/context/UIContext"
 import { useCart } from "@/context/CartContext"
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
 
 export function Navbar() {
   const { setIsMenuOpen, setIsCartOpen, searchQuery, setSearchQuery } = useUI()
   const { cartItemCount, isHydrated } = useCart()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isBouncing, setIsBouncing] = useState(false)
   const router = useRouter()
+
+  useEffect(() => {
+    if (cartItemCount > 0) {
+      setIsBouncing(true)
+      const timer = setTimeout(() => setIsBouncing(false), 300)
+      return () => clearTimeout(timer)
+    }
+  }, [cartItemCount])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
@@ -66,7 +75,7 @@ export function Navbar() {
 
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative p-2 -mr-2 text-white flex-shrink-0 hover:text-[#D4AF37] transition-colors"
+            className={`relative p-2 -mr-2 text-white flex-shrink-0 hover:text-[#D4AF37] transition-colors ${isBouncing ? 'animate-bounce text-[#D4AF37]' : ''}`}
             aria-label="Ver carrito"
           >
             <ShoppingBag className="w-5 h-5" />
