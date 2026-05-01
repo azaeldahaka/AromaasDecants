@@ -3,9 +3,19 @@
 import { useUI } from "@/context/UIContext"
 import { ProductCard } from "@/components/catalog/ProductCard"
 import productosData from "@/data/productos.json"
+import { useSearchParams } from "next/navigation"
+import { useEffect, Suspense } from "react"
 
-export default function CatalogPage() {
+function CatalogContent() {
   const { catalogCategory, setCatalogCategory, searchQuery } = useUI()
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    const cat = searchParams.get("category")
+    if (cat) {
+      setCatalogCategory(cat)
+    }
+  }, [searchParams, setCatalogCategory])
 
   // Filtro de productos según la UI
   const filteredProducts = productosData.filter((product) => {
@@ -19,6 +29,7 @@ export default function CatalogPage() {
     if (catalogCategory === "ofertas") return true
     if (catalogCategory === "designer") return product.tipo.toLowerCase() === "diseñador"
     if (catalogCategory === "arabic") return product.tipo.toLowerCase() === "árabe"
+    if (catalogCategory === "lujo") return product.tipo.toLowerCase() === "lujo"
     
     // Filtros por género
     if (["hombre", "mujer", "unisex"].includes(catalogCategory)) {
@@ -35,7 +46,8 @@ export default function CatalogPage() {
     "unisex": "Fragancias Unisex",
     "ofertas": "Ofertas Especiales",
     "designer": "Diseñador",
-    "arabic": "Árabes"
+    "arabic": "Árabes",
+    "lujo": "Lujo / Nicho"
   }
 
   const title = categoryTitles[catalogCategory] || "Catálogo"
@@ -50,7 +62,7 @@ export default function CatalogPage() {
         
         {/* Chips de filtrado rápido */}
         <div className="flex overflow-x-auto gap-2 pb-2 scrollbar-hide max-w-full">
-            {["todos", "designer", "arabic", "hombre", "mujer"].map(cat => (
+            {["todos", "lujo", "designer", "arabic", "hombre", "mujer"].map(cat => (
               <button
                 key={cat}
                 onClick={() => setCatalogCategory(cat)}
@@ -78,5 +90,13 @@ export default function CatalogPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function CatalogPage() {
+  return (
+    <Suspense fallback={<div className="py-32 text-center text-[#D4AF37] font-serif animate-pulse">Cargando catálogo...</div>}>
+      <CatalogContent />
+    </Suspense>
   )
 }

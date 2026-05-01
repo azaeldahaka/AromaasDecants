@@ -66,7 +66,7 @@
       "10ml": "/Fotos Perfumes/Givenchy eau de parfum 10 ml.png"
     },
     "tipo": "Diseñador",
-    "genero": "mujer",
+    "genero": "unisex",
     "descripcion": "Una explosión floral y amaderada, sofisticada e inolvidable para la mujer moderna."
   },
   {
@@ -79,7 +79,7 @@
       "5ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 5ml.png",
       "10ml": "/Fotos Perfumes/Tom ford BLACK ORCHID EDP 10ml.png"
     },
-    "tipo": "Nicho",
+    "tipo": "Lujo",
     "genero": "unisex",
     "descripcion": "Lujo oscuro y enigmático. Una poción narcótica de orquídea negra, especias y trufa."
   },
@@ -93,7 +93,7 @@
       "5ml": "/Fotos Perfumes/Tom ford BOIS PACIFIQUE EAU DE PARFUM 5ml.png",
       "10ml": "/Fotos Perfumes/Tom ford BOIS PACIFIQUE EAU DE PARFUM 10ml.png"
     },
-    "tipo": "Nicho",
+    "tipo": "Lujo",
     "genero": "unisex",
     "descripcion": "Misterio oceánico y maderas oscuras se funden en una esencia nicho verdaderamente embriagadora."
   },
@@ -122,7 +122,7 @@
       "10ml": "/Fotos Perfumes/douce nuit elysees fashion 10ml.png"
     },
     "tipo": "Diseñador",
-    "genero": "mujer",
+    "genero": "unisex",
     "descripcion": "Dulzura encantadora y jovial, ideal para iluminar tus días con un rastro inolvidable."
   },
   {

@@ -61,6 +61,9 @@ export function MenuDrawer() {
                 <ul className="bg-black/50 py-2">
                   {[
                     { id: "todos", label: "Todos", isPrimary: true },
+                    { id: "lujo", label: "Lujo / Nicho" },
+                    { id: "designer", label: "Diseñador" },
+                    { id: "arabic", label: "Árabe" },
                     { id: "hombre", label: "Hombre" },
                     { id: "mujer", label: "Mujer" },
                     { id: "unisex", label: "Unisex" },
@@ -68,7 +71,7 @@ export function MenuDrawer() {
                   ].map(cat => (
                     <li key={cat.id}>
                       <Link
-                        href="/catalog"
+                        href={`/catalog?category=${cat.id}`}
                         onClick={() => handleCategoryClick(cat.id)}
                         className={`block w-full py-2.5 text-sm transition-all ${
                           cat.isPrimary 

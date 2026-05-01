@@ -11,17 +11,20 @@ const heroSlides = [
   {
     image: "/perfume-lujo.jpeg",
     title: "Fragancias de Lujo",
-    subtitle: "Descubre el arte de la perfumería"
+    subtitle: "Descubre el arte de la perfumería",
+    link: "/catalog?category=lujo"
   },
   {
     image: "/perfume-diseñador.jpeg",
     title: "Perfumería de Diseñador",
-    subtitle: "Las mejores marcas al mejor precio"
+    subtitle: "Las mejores marcas al mejor precio",
+    link: "/catalog?category=diseñador"
   },
   {
     image: "/perfume-arabe.jpeg",
     title: "Perfumería Árabe",
-    subtitle: "Aromas exóticos y duraderos"
+    subtitle: "Aromas exóticos y duraderos",
+    link: "/catalog?category=árabe"
   }
 ]
 
@@ -83,7 +86,7 @@ export function HomeView() {
                 {slide.subtitle}
               </p>
               <Link
-                href="/catalog"
+                href={slide.link}
                 className="px-8 py-3 bg-[#D4AF37] text-black font-semibold rounded-md hover:bg-[#D4AF37]/90 transition-colors"
               >
                 Ver Catálogo

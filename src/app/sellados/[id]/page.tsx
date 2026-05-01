@@ -27,7 +27,7 @@ export default function SelladoDetailPage() {
 
   const handleWhatsApp = () => {
     const text = `Hola AromaasDecants, quería consultar el stock y precio del perfume sellado: ${product.nombre} (${product.marca}) - Cantidad: ${quantity}`
-    window.open(`https://wa.me/5493874431282?text=${encodeURIComponent(text)}`, '_blank')
+    window.open(`https://wa.me/5493874796321?text=${encodeURIComponent(text)}`, '_blank')
   }
 
   const handleShare = async () => {
@@ -125,7 +125,7 @@ export default function SelladoDetailPage() {
             onClick={handleWhatsApp}
             className="w-full inline-flex items-center justify-center gap-4 py-5 text-lg bg-[#25D366] text-white font-bold tracking-wide uppercase rounded-2xl hover:bg-[#25D366]/90 transition-all hover:scale-[1.02] active:scale-95 shadow-[0_0_30px_rgba(37,211,102,0.2)] border border-green-400/20"
           >
-            <MessageCircle className="w-6 h-6" />
+            <MessageCircle className="w-6 h-6 ml-5" />
             Consultar Stock en WhatsApp
           </button>
         </div>
