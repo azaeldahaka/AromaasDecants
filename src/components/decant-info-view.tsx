@@ -172,7 +172,7 @@ export function DecantInfoView() {
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-[#D4AF37]/20 text-center bg-zinc-950 mt-12">
         <p className="text-sm text-zinc-500 font-serif">
-          © 2024 AromaasDecants. La revolución de la alta perfumería.
+          © 2026 AromaasDecants. La revolución de la alta perfumería.
         </p>
       </footer>
     </div>

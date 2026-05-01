@@ -162,7 +162,7 @@ export function MenuDrawer() {
         {/* Footer */}
         <div className="p-4 border-t border-[#D4AF37]/20">
           <p className="text-xs text-zinc-500 text-center">
-            © 2024 AromaasDecants
+            © 2026 AromaasDecants
           </p>
         </div>
       </aside>
