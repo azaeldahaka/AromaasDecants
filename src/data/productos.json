@@ -161,9 +161,9 @@
     "nombre": "The Kingdom",
     "precios": { "3ml": 5000, "5ml": 8000, "10ml": 14000 },
     "imagenes": {
-      "3ml": "/Fotos Perfumes/Lattafa the kindgom 3ml.png",
-      "5ml": "/Fotos Perfumes/Lattafa the kindgom 5ml.png",
-      "10ml": "/Fotos Perfumes/Lattafa the kindgom 10ml.png"
+      "3ml": "/Fotos Perfumes/Lattafa the kindgom 3ml p.png",
+      "5ml": "/Fotos Perfumes/Lattafa the kindgom 5ml p.png",
+      "10ml": "/Fotos Perfumes/Lattafa the kindgom 10ml p.png"
     },
     "tipo": "Árabe",
     "genero": "hombre"
@@ -187,9 +187,9 @@
     "nombre": "Eclaire",
     "precios": { "3ml": 3600, "5ml": 6000, "10ml": 11000 },
     "imagenes": {
-      "3ml": "/Fotos Perfumes/Lattafa eclaire 3ml.png",
-      "5ml": "/Fotos Perfumes/Lattafa eclaire 5ml.png",
-      "10ml": "/Fotos Perfumes/Lattafa eclaire 10ml.png"
+      "3ml": "/Fotos Perfumes/Lattafa eclaire 3ml p.png",
+      "5ml": "/Fotos Perfumes/Lattafa eclaire 5ml p.png",
+      "10ml": "/Fotos Perfumes/Lattafa eclaire 10ml p.png"
     },
     "tipo": "Árabe",
     "genero": "mujer"

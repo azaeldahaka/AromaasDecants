@@ -43,7 +43,7 @@ export default function SelladosClient() {
        
        {/* Filters */}
        <div className="flex flex-wrap justify-center gap-3 mb-16">
-          {["Todos", "Hombre", "Mujer", "Unisex", "Diseñador", "Árabe", "Nicho", "Oferta"].map(cat => (
+          {["Todos", "Hombre", "Unisex", "Diseñador", "Árabe", "Oferta"].map(cat => (
              <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}

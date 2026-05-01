@@ -1,42 +1,72 @@
 [
   {
-    "id": "creed-aventus-sellado",
-    "marca": "Creed",
-    "nombre": "Aventus EDP",
-    "precio": 350000,
-    "imagen": "/perfume-lujo.jpeg",
-    "tipo": "Nicho",
-    "genero": "Hombre",
-    "descripcion": "Una obra maestra de la perfumería nicho. Envase sellado original de fábrica (100ml)."
-  },
-  {
-    "id": "lattafa-asad-sellado",
-    "marca": "Lattafa",
-    "nombre": "Asad EDP",
-    "precio": 65000,
-    "imagen": "/perfume-arabe.jpeg",
+    "id": "hawas-malibu-sellado",
+    "marca": "Rasasi",
+    "nombre": "Hawas Malibu",
+    "precio": 92000,
+    "imagen": "/Perfumes sellados/Hawas malibu.PNG",
     "tipo": "Árabe",
     "genero": "Hombre",
-    "descripcion": "Potencia y carácter oriental. Botella original sellada (100ml)."
+    "descripcion": "Perfume sellado original."
   },
   {
-    "id": "baccarat-rouge-sellado",
-    "marca": "Maison Francis Kurkdjian",
-    "nombre": "Baccarat Rouge 540",
-    "precio": 480000,
-    "imagen": "/perfume-lujo.jpeg",
-    "tipo": "Nicho",
-    "genero": "Unisex",
-    "descripcion": "El lujo absoluto en su presentación original, celofán de fábrica (70ml)."
+    "id": "afnan-9pm-sellado",
+    "marca": "Afnan",
+    "nombre": "9PM",
+    "precio": 58000,
+    "imagen": "/Perfumes sellados/Afnan 9 PM.PNG",
+    "tipo": "Árabe",
+    "genero": "Hombre",
+    "descripcion": "Perfume sellado original."
   },
   {
-    "id": "valentino-roma-sellado",
-    "marca": "Valentino",
-    "nombre": "Born in Roma Intense",
-    "precio": 190000,
-    "imagen": "/perfume-diseñador.jpeg",
+    "id": "odyssey-mandarin-sky-sellado",
+    "marca": "Odyssey",
+    "nombre": "Mandarin Sky",
+    "precio": 63000,
+    "imagen": "/Perfumes sellados/Mandarin sky.PNG",
+    "tipo": "Árabe",
+    "genero": "Hombre",
+    "descripcion": "Perfume sellado original."
+  },
+  {
+    "id": "club-de-nuit-sellado",
+    "marca": "Armaf",
+    "nombre": "Club de Nuit Intense",
+    "precio": 72000,
+    "imagen": "/Perfumes sellados/Club de nuit.PNG",
+    "tipo": "Árabe",
+    "genero": "Hombre",
+    "descripcion": "Perfume sellado original."
+  },
+  {
+    "id": "club-de-nuit-urban-elixir-sellado",
+    "marca": "Armaf",
+    "nombre": "Club de Nuit Urban Elixir",
+    "precio": 72000,
+    "imagen": "/Perfumes sellados/Club de nuit Urban elixir.PNG",
+    "tipo": "Árabe",
+    "genero": "Hombre",
+    "descripcion": "Perfume sellado original."
+  },
+  {
+    "id": "jpg-le-male-sellado",
+    "marca": "Jean Paul Gaultier",
+    "nombre": "Le Male Elixir",
+    "precio": 207000,
+    "imagen": "/Perfumes sellados/Jean paul guiltier le male elixir .PNG",
     "tipo": "Diseñador",
-    "genero": "Mujer",
-    "descripcion": "Dulce, elegante y seductor. Presentación sellada 100ml."
+    "genero": "Hombre",
+    "descripcion": "Perfume sellado original."
+  },
+  {
+    "id": "lattafa-khamrah-sellado",
+    "marca": "Lattafa",
+    "nombre": "Khamrah",
+    "precio": 55000,
+    "imagen": "/Perfumes sellados/Perfume Khamrah .PNG",
+    "tipo": "Árabe",
+    "genero": "Hombre",
+    "descripcion": "Perfume sellado original."
   }
 ]

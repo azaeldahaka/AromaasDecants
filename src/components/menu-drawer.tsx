@@ -100,7 +100,7 @@ export function MenuDrawer() {
               
               {selladosExpanded && (
                 <ul className="bg-black/50 py-2">
-                  {["Todos", "Hombre", "Mujer", "Unisex", "Diseñador", "Árabe", "Nicho"].map(cat => (
+                  {["Todos", "Hombre", "Unisex", "Diseñador", "Árabe"].map(cat => (
                     <li key={cat}>
                       <Link
                         href={`/sellados?category=${cat}`}
