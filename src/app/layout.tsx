@@ -14,12 +14,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://aromaas-decants.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: {
     default: 'AromaasDecants | Perfumería de Lujo',
     template: '%s | AromaasDecants',
   },
-  description: 'Descubre fragancias de diseñador y perfumería árabe en presentaciones decant. 100% originales, extracción estéril.',
+  description: 'Venta de decants y perfumes sellados de lujo y árabes. 100% originales.',
+  keywords: ['decants de perfumes', 'perfumes árabes', 'perfumes de diseñador', 'comprar perfumes sellados originales', 'muestras de perfumes de lujo', 'AromaasDecants'],
   generator: 'v0.app',
   openGraph: {
     type: 'website',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     url: '/',
     siteName: 'AromaasDecants',
     title: 'AromaasDecants | Perfumería de Lujo',
-    description: 'Descubre fragancias de diseñador y perfumería árabe en presentaciones decant. 100% originales.',
+    description: 'Venta de decants y perfumes sellados de lujo y árabes. 100% originales.',
     images: [
       {
         url: '/og-image.jpg',
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'AromaasDecants | Perfumería de Lujo',
-    description: 'Descubre fragancias de diseñador y perfumería árabe en presentaciones decant.',
+    description: 'Venta de decants y perfumes sellados de lujo y árabes. 100% originales.',
   },
   icons: {
     icon: [
