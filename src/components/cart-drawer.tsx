@@ -31,7 +31,7 @@ export function CartDrawer() {
       `¡Hola AromaasDecants, quiero realizar el siguiente pedido:\n\n${items}\n\nTotal: ${formatPrice(cartTotal)}.\nEnvío a coordinar por privado.`
     )
     
-    window.open(`https://wa.me/5493874431282?text=${message}`, "_blank")
+    window.open(`https://wa.me/5493874796321?text=${message}`, "_blank")
   }
 
   if (!isHydrated || !isCartOpen) return null
