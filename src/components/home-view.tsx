@@ -6,6 +6,8 @@ import Link from "next/link"
 import { useState, useEffect, useCallback } from "react"
 import { useUI } from "@/context/UIContext"
 import productsData from "@/data/productos.json"
+import promocionesData from "@/data/promociones.json"
+import { PromoCard } from "@/components/ui/promo-card"
 
 const heroSlides = [
   {
@@ -186,36 +188,16 @@ export function HomeView() {
         </div>
       </section>
 
-      {/* Best Sellers */}
-      <section className="py-12 border-t border-border">
-        <div className="px-4 mb-6 flex items-center justify-between">
-          <h3 className="font-serif text-2xl text-foreground">Más Vendidos</h3>
-          <Link
-            href="/catalog"
-            className="text-sm text-[#D4AF37] hover:underline"
-          >
-            Ver todos
-          </Link>
+      {/* Promociones Exclusivas */}
+      <section className="py-12 border-t border-border bg-black">
+        <div className="px-4 mb-8 text-center flex flex-col items-center">
+          <span className="text-[#D4AF37] text-sm tracking-[0.2em] uppercase font-semibold mb-2">Ofertas por tiempo limitado</span>
+          <h3 className="font-serif text-3xl text-white">Promociones Exclusivas</h3>
         </div>
 
-        <div className="flex gap-4 overflow-x-auto pb-4 px-4 scrollbar-hide">
-          {bestSellers.map((product) => (
-            <Link
-              key={product.id}
-              href={`/product/${product.id}`}
-              className="flex-shrink-0 w-40 text-left group"
-            >
-              <div className="relative aspect-square rounded-lg overflow-hidden bg-zinc-900 mb-3 border border-[#D4AF37]/20 flex items-center justify-center p-2 group-hover:border-[#D4AF37]/60 transition-colors">
-                <Image src={(product as any).imagenes["3ml"]} fill alt={product.nombre} className="object-contain p-2" />
-              </div>
-              <h4 className="text-sm font-medium text-white truncate">
-                {product.nombre}
-              </h4>
-              <p className="text-xs text-zinc-400 mb-1">{product.marca}</p>
-              <p className="text-sm text-[#D4AF37]">
-                Desde {formatPrice(product.precios["3ml"])}
-              </p>
-            </Link>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 max-w-7xl mx-auto">
+          {promocionesData.map((promo) => (
+            <PromoCard key={promo.id} promo={promo} />
           ))}
         </div>
       </section>

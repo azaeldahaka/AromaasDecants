@@ -140,22 +140,22 @@ export function CartDrawer() {
               <span className="text-2xl font-serif text-[#D4AF37]">{formatPrice(cartTotal)}</span>
             </div>
 
-            {totalMl < 6 && (
+            {totalMl < 5 && (
               <div className="text-amber-500 text-xs text-center font-medium px-3 bg-amber-500/10 border border-amber-500/20 py-2 rounded-md">
-                El pedido mínimo para finalizar la compra es de 6ml en total.
+                El pedido mínimo para finalizar la compra es de 5ml en total.
               </div>
             )}
 
             <button
               onClick={handleWhatsAppCheckout}
-              disabled={totalMl < 6}
+              disabled={totalMl < 5}
               className={`w-full py-4 font-semibold rounded-md flex items-center justify-center gap-2 transition-all duration-200 ${
-                totalMl < 6 
+                totalMl < 5 
                   ? "bg-zinc-800 text-zinc-500 cursor-not-allowed" 
                   : "bg-[#D4AF37] text-black hover:bg-[#D4AF37]/90 hover:scale-[1.02] active:scale-95"
               }`}
             >
-              <MessageCircle className={`w-5 h-5 ${totalMl < 6 ? "fill-zinc-500 text-zinc-500" : "fill-black text-black"}`} />
+              <MessageCircle className={`w-5 h-5 ${totalMl < 5 ? "fill-zinc-500 text-zinc-500" : "fill-black text-black"}`} />
               Checkout por WhatsApp
             </button>
           </div>

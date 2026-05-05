@@ -1,0 +1,42 @@
+[
+  {
+    "id": "promo-4-fantasticos",
+    "nombre": "4 FANTÁSTICOS",
+    "descripcion": "Le Male Elixir, Scandal Absolu, Invictus Elixir, Born in Roma EDT",
+    "precio": 57500,
+    "total_ml": 20,
+    "productos_incluidos": ["Le Male Elixir", "Scandal Absolu", "Invictus Elixir", "Born in Roma EDT"]
+  },
+  {
+    "id": "promo-duo-premium",
+    "nombre": "DÚO PREMIUM",
+    "descripcion": "Born in Roma, Hawas Malibu",
+    "precio": 23500,
+    "total_ml": 10,
+    "productos_incluidos": ["Born in Roma EDT", "Hawas Malibu"]
+  },
+  {
+    "id": "promo-trio-elite",
+    "nombre": "TRÍO ÉLITE",
+    "descripcion": "Honor and Glory (10ml), Born in Roma (5ml), Le Male Elixir (5ml)",
+    "precio": 36800,
+    "total_ml": 20,
+    "productos_incluidos": ["Bade'e Al Oud Honor & Glory", "Born in Roma EDT", "Le Male Elixir"]
+  },
+  {
+    "id": "promo-duo-hawas",
+    "nombre": "DÚO HAWAS",
+    "descripcion": "Malibu (10ml), Ice (10ml)",
+    "precio": 24400,
+    "total_ml": 20,
+    "productos_incluidos": ["Hawas Malibu", "Hawas Ice"]
+  },
+  {
+    "id": "promo-tom-ford-pack",
+    "nombre": "TOM FORD PACK",
+    "descripcion": "Orchid EDP (5ml), Bois Pacifique EDP (5ml)",
+    "precio": 32800,
+    "total_ml": 10,
+    "productos_incluidos": ["Black Orchid EDP", "Bois Pacifique EDP"]
+  }
+]
