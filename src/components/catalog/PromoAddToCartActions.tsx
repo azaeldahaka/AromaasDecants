@@ -101,10 +101,10 @@ export function PromoAddToCartActions({ promo }: { promo: any }) {
         </div>
         
         <div className="text-zinc-400 text-lg max-w-lg mb-8 leading-relaxed">
-          <p className="mb-2 font-medium text-zinc-300">Incluye los siguientes perfumes:</p>
+          <p className="mb-2 font-medium text-zinc-300">Incluye los siguientes decants:</p>
           <ul className="list-disc pl-5 space-y-1 text-base">
-            {promo.productos_incluidos.map((name: string) => (
-              <li key={name}>{name}</li>
+            {promo.descripcion.split(", ").map((item: string, idx: number) => (
+              <li key={idx}>{item}</li>
             ))}
           </ul>
         </div>
