@@ -4,9 +4,10 @@ import { ArrowLeft, Minus, Plus, ShoppingBag } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
 import { useStore } from "@/lib/store-context"
+import promocionesData from "@/data/promociones.json"
 
 export function ProductDetailView() {
-  const { selectedProduct, setCurrentView, addToCart } = useStore()
+  const { selectedProduct, setCurrentView, addToCart, setCurrentFilter } = useStore()
   const [selectedVariant, setSelectedVariant] = useState(0)
   const [quantity, setQuantity] = useState(1)
 
@@ -28,6 +29,8 @@ export function ProductDetailView() {
 
   const currentVariant = selectedProduct.variants[selectedVariant]
   const totalPrice = currentVariant.price * quantity
+
+  const relatedPromo = promocionesData.find(promo => promo.productos_incluidos.includes(selectedProduct.name))
 
   const handleAddToCart = () => {
     addToCart(selectedProduct, currentVariant.size, quantity)
@@ -177,6 +180,25 @@ export function ProductDetailView() {
             Todos nuestros decants son extraídos de manera estéril con jeringas 
             nuevas, garantizando la calidad y autenticidad del producto.
           </p>
+          
+          {relatedPromo && (
+            <div 
+              className="mt-6 p-4 rounded-xl border border-[#D4AF37]/50 bg-[#D4AF37]/5 relative overflow-hidden group cursor-pointer transition-all hover:scale-[1.02] active:scale-[0.98]"
+              onClick={() => {
+                setCurrentFilter("promociones")
+                setCurrentView("catalog")
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="flex items-start gap-3 relative z-10">
+                <span className="text-xl mt-0.5">✨</span>
+                <div>
+                  <h4 className="text-[#D4AF37] font-semibold mb-1">{relatedPromo.nombre}: Ahorra llevando este perfume en formato combo.</h4>
+                  <p className="text-xs text-zinc-400">Toca para ver los combos exclusivos del catálogo.</p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

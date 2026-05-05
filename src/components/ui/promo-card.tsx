@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useCart } from "@/context/CartContext"
 import { useUI } from "@/context/UIContext"
 import { ShoppingBag } from "lucide-react"
@@ -24,7 +25,9 @@ export function PromoCard({ promo }: { promo: PromoType }) {
     productsData.find(p => p.nombre === name)
   ).filter(Boolean)
 
-  const handleAddPromo = () => {
+  const handleAddPromo = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
     // Determine image for the cart (just use the first one if available)
     const firstImage = matchedProducts[0] ? (matchedProducts[0] as any).imagenes["3ml"] : "/perfume-lujo.jpeg"
     
@@ -50,8 +53,9 @@ export function PromoCard({ promo }: { promo: PromoType }) {
 
   return (
     <div className="group relative bg-zinc-900/50 border border-[#D4AF37]/20 rounded-xl overflow-hidden hover:border-[#D4AF37]/60 transition-colors flex flex-col">
-      {/* Collage Header */}
-      <div className="relative h-48 bg-zinc-950 flex p-4 justify-center items-center overflow-hidden border-b border-[#D4AF37]/10">
+      <Link href={`/promociones/${promo.id}`} className="flex flex-col flex-1">
+        {/* Collage Header */}
+        <div className="relative h-48 bg-zinc-950 flex p-4 justify-center items-center overflow-hidden border-b border-[#D4AF37]/10">
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
         
         {/* If we have at least 1 image, display them */}
@@ -82,22 +86,23 @@ export function PromoCard({ promo }: { promo: PromoType }) {
         <h3 className="font-serif text-lg text-white mb-2 group-hover:text-[#D4AF37] transition-colors">
           {promo.nombre}
         </h3>
-        <p className="text-sm text-zinc-400 leading-relaxed mb-4 flex-1">
-          {promo.descripcion}
-        </p>
-
-        <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#D4AF37]/10">
-          <span className="text-xl font-serif text-[#D4AF37] font-medium">
-            {formatPrice(promo.precio)}
-          </span>
-          <button
-            onClick={handleAddPromo}
-            className="flex items-center justify-center p-2 rounded-full bg-white/5 hover:bg-[#D4AF37] text-white hover:text-black transition-all"
-            aria-label="Agregar combo al carrito"
-          >
-            <ShoppingBag className="w-5 h-5" />
-          </button>
+          <p className="text-sm text-zinc-400 leading-relaxed mb-4 flex-1">
+            {promo.descripcion}
+          </p>
         </div>
+      </Link>
+
+      <div className="px-5 pb-5 flex items-center justify-between mt-auto pt-4 border-t border-[#D4AF37]/10">
+        <span className="text-xl font-serif text-[#D4AF37] font-medium">
+          {formatPrice(promo.precio)}
+        </span>
+        <button
+          onClick={handleAddPromo}
+          className="flex items-center justify-center p-2 rounded-full bg-white/5 hover:bg-[#D4AF37] text-white hover:text-black transition-all z-10"
+          aria-label="Agregar combo al carrito"
+        >
+          <ShoppingBag className="w-5 h-5" />
+        </button>
       </div>
     </div>
   )

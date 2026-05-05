@@ -2,9 +2,12 @@
 
 import Image from "next/image"
 import { useStore, products, Product } from "@/lib/store-context"
+import promocionesData from "@/data/promociones.json"
+import { PromoCard } from "@/components/ui/promo-card"
 
 const filters = [
   { id: "todos", label: "Todos" },
+  { id: "promociones", label: "Ver Promociones" },
   { id: "citricos", label: "Cítricos" },
   { id: "amaderados", label: "Amaderados" },
   { id: "florales", label: "Florales" },
@@ -104,7 +107,13 @@ export function CatalogView() {
 
       {/* Product Grid */}
       <div className="p-4">
-        {filteredProducts.length === 0 ? (
+        {currentFilter === "promociones" ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {promocionesData.map((promo) => (
+              <PromoCard key={promo.id} promo={promo} />
+            ))}
+          </div>
+        ) : filteredProducts.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-16 text-center">
             <p className="text-muted-foreground mb-2">No se encontraron productos</p>
             <button

@@ -2,7 +2,7 @@
   {
     "id": "promo-4-fantasticos",
     "nombre": "4 FANTÁSTICOS",
-    "descripcion": "Le Male Elixir, Scandal Absolu, Invictus Elixir, Born in Roma EDT",
+    "descripcion": "Le Male Elixir (5ml), Scandal Absolu (5ml), Invictus Elixir (5ml), Born in Roma EDT (5ml)",
     "precio": 57500,
     "total_ml": 20,
     "productos_incluidos": ["Le Male Elixir", "Scandal Absolu", "Invictus Elixir", "Born in Roma EDT"]
@@ -10,7 +10,7 @@
   {
     "id": "promo-duo-premium",
     "nombre": "DÚO PREMIUM",
-    "descripcion": "Born in Roma, Hawas Malibu",
+    "descripcion": "Born in Roma (5ml), Hawas Malibu (5ml)",
     "precio": 23500,
     "total_ml": 10,
     "productos_incluidos": ["Born in Roma EDT", "Hawas Malibu"]

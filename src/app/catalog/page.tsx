@@ -2,7 +2,9 @@
 
 import { useUI } from "@/context/UIContext"
 import { ProductCard } from "@/components/catalog/ProductCard"
+import { PromoCard } from "@/components/ui/promo-card"
 import productosData from "@/data/productos.json"
+import promocionesData from "@/data/promociones.json"
 import { useSearchParams } from "next/navigation"
 import { useEffect, Suspense } from "react"
 
@@ -44,6 +46,7 @@ function CatalogContent() {
 
   const categoryTitles: Record<string, string> = {
     "todos": "Nuestra Colección",
+    "promociones": "Promociones Exclusivas",
     "hombre": "Para Hombre",
     "mujer": "Para Mujer",
     "unisex": "Fragancias Unisex",
@@ -65,7 +68,7 @@ function CatalogContent() {
         
         {/* Chips de filtrado rápido */}
         <div className="flex overflow-x-auto gap-2 pb-2 scrollbar-hide max-w-full">
-            {["todos", "lujo", "designer", "arabic", "hombre", "mujer"].map(cat => (
+            {["todos", "promociones", "lujo", "designer", "arabic", "hombre", "mujer"].map(cat => (
               <button
                 key={cat}
                 onClick={() => setCatalogCategory(cat)}
@@ -82,14 +85,22 @@ function CatalogContent() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product as any} />
-        ))}
-        {filteredProducts.length === 0 && (
-          <div className="col-span-full flex flex-col items-center justify-center py-32 text-zinc-500 border border-zinc-800/50 rounded-2xl bg-zinc-950/50">
-            <p className="text-xl font-serif text-zinc-400 mb-2">No encontramos perfumes.</p>
-            <p className="text-sm">Intenta seleccionando otra categoría en el menú superior.</p>
-          </div>
+        {catalogCategory === "promociones" ? (
+          promocionesData.map(promo => (
+            <PromoCard key={promo.id} promo={promo} />
+          ))
+        ) : (
+          <>
+            {filteredProducts.map(product => (
+              <ProductCard key={product.id} product={product as any} />
+            ))}
+            {filteredProducts.length === 0 && (
+              <div className="col-span-full flex flex-col items-center justify-center py-32 text-zinc-500 border border-zinc-800/50 rounded-2xl bg-zinc-950/50">
+                <p className="text-xl font-serif text-zinc-400 mb-2">No encontramos perfumes.</p>
+                <p className="text-sm">Intenta seleccionando otra categoría en el menú superior.</p>
+              </div>
+            )}
+          </>
         )}
       </div>
     </div>
