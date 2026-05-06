@@ -26,10 +26,10 @@
   {
     "id": "promo-duo-hawas",
     "nombre": "DÚO HAWAS",
-    "descripcion": "Malibu (10ml), Ice (10ml)",
+    "descripcion": "Hawas Tropical (10ml), Hawas Fire (10ml)",
     "precio": 24400,
     "total_ml": 20,
-    "productos_incluidos": ["Hawas Malibu", "Hawas Ice"]
+    "productos_incluidos": ["Hawas Tropical", "Hawas Fire"]
   },
   {
     "id": "promo-tom-ford-pack",
